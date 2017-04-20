@@ -1,1 +1,2 @@
-include ':app', ':recycleviewStaggered', ':RecyclerViewSnap', ':gravitysnaphelper'
+include ':app', ':RecyclerViewSnap', ':gravitysnaphelper'
+include ':tBShopCar'

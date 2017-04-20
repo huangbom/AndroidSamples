@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <include
+            layout="@layout/lay_3text_switch"
+            app:leftText='@{"分解为"}'
+            app:rightText='@{"分解为"}'
+            app:rightTextSuffix='@{"俯卧 i"}' />
+
+        <include
+            layout="@layout/lay_3text_switch"
+            app:leftText='@{"分解为"}'
+            app:rightText='@{"分解为"}'
+            app:rightTextSuffix='@{"俯卧 i"}'
+            app:dividerVisibility='@{false}'
+            />
+
+        <include
+            layout="@layout/lay_3text_switch"
+            app:leftText='@{"33"}'
+            app:rightText='@{"44"}'
+            app:rightTextSuffix='@{"俯卧 i"}'
+            app:visibility="@{false}" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="lay_multi_text_img"
+            />
+        <include
+            layout="@layout/lay_multi_text_img"
+            app:leftImg="@{@drawable/common_full_open_on_phone}"
+            app:leftText='@{"分解为"}'
+            app:rightImg="@{@drawable/common_full_open_on_phone}"
+            app:rightText='@{"分解为"}'
+            app:rightTextPrefix='@{"呃我哦"}'
+            app:rightTextSuffix='@{"俯卧 i"}' />
+
+        <include
+            layout="@layout/lay_multi_text_img"
+            app:dividerVisibility="@{false}"
+            app:leftImg="@{@drawable/common_full_open_on_phone}"
+            app:leftText='@{"分解22"}'
+            app:rightImg="@{@drawable/common_full_open_on_phone}"
+            app:rightText='@{"分33为"}'
+            app:rightTextPrefix='@{"ew哦"}'
+            app:rightTextSuffix='@{"俯4"}' />
+
+    </LinearLayout>
+</layout>
