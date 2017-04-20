@@ -6,14 +6,14 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.LinearLayout;
+import android.widget.FrameLayout;
 
 import com.example.wuxie.R;
 
 /**
  * Created by huangyaoshi on 2017/4/20.
  */
-public class AddReduceEditText extends LinearLayout {
+public class AddReduceEditText extends FrameLayout {
 
     private static final String TAG = "AddReduceEditText";
 

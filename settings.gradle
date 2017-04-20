@@ -1,2 +1,2 @@
-include ':app', ':RecyclerViewSnap', ':gravitysnaphelper'
+include ':app', ':RecyclerViewSnap', ':gravitysnaphelper', ':NewbieGuide'
 include ':tBShopCar'
