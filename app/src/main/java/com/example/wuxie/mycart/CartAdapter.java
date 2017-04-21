@@ -1,6 +1,7 @@
 package com.example.wuxie.mycart;
 
 import android.content.Context;
+import android.databinding.DataBindingUtil;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.CompoundButton;
 
 import com.example.wuxie.R;
 import com.example.wuxie.base.BaseExpanAdapter;
+import com.example.wuxie.databinding.ItemCartChildrenBinding;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -70,18 +72,26 @@ public class CartAdapter extends BaseExpanAdapter<MyCartActivity.ShopModel,MyCar
 
     @Override
     public View getChildView(final int groupPosition, final int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
-//        ItemCartChildrenBinding binding ;
+        ItemCartChildrenBinding binding ;
         if (convertView == null){
-            convertView = LayoutInflater.from(mContext).inflate( R.layout.item_cart_children, null, false);
+            binding = DataBindingUtil.inflate(LayoutInflater.from(mContext),R.layout.item_cart_children,null,false);
+//            convertView = LayoutInflater.from(mContext).inflate( R.layout.item_cart_children, null, false);
+        }else{
+            binding = DataBindingUtil.getBinding(convertView);
         }
 
         List<Long> list = isEdit ? mEditIds : mSelectIds;
 
-        CheckBox checkBox = getAdapterView(convertView, R.id.check);
+        CheckBox checkBox = binding.check;
+
+//        CheckBox checkBox = getAdapterView(convertView, R.id.check);
         long childId = getChildId(groupPosition, childPosition);
 //        Log.d(TAG, String.format("getChildView:%d groupPosition:%d childPosition:%d",groupPosition,childPosition,childId));
 //        Log.d(TAG, "getChildView: list "+list);
-        checkBox.setChecked(list.contains(childId));
+
+//        CheckBoxox.setChecked(list.contains(childId));
+
+        binding.setIsCheck(list.contains(childId));
 
         checkBox.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -102,15 +112,16 @@ public class CartAdapter extends BaseExpanAdapter<MyCartActivity.ShopModel,MyCar
 
             }
         });
-        getAdapterView(convertView,R.id.tv_express).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (isEdit){
-                    Log.d(TAG, "onClick: tvExpress");
-                }
-            }
-        });
+//        getAdapterView(convertView,R.id.tv_express).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (isEdit){
+//                    Log.d(TAG, "onClick: tvExpress");
+//                }
+//            }
+//        });
 
+        convertView = binding.getRoot();
 //        binding.tvExpress.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {

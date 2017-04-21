@@ -1,126 +1,137 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:descendantFocusability="blocksDescendants">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <LinearLayout
+    <data>
+        <variable
+            name="isCheck"
+            type="Boolean"/>
+
+
+    </data>
+
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:paddingBottom="@dimen/activity_vertical_margin"
-        android:paddingTop="@dimen/activity_vertical_margin"
-        tools:background="@android:color/white">
-
-        <CheckBox
-            android:id="@+id/check"
-            android:layout_width="30dp"
-            android:layout_height="match_parent"
-            android:background="@android:color/transparent"
-            android:button="@drawable/selector_radio"
-            android:focusable="false"
-            android:gravity="center" />
-
-        <ImageView
-            android:id="@+id/ivGoods"
-            android:layout_width="@dimen/size_80"
-            android:layout_height="@dimen/size_80"
-            android:background="@drawable/img_default" />
+        android:descendantFocusability="blocksDescendants">
 
         <LinearLayout
-            android:id="@+id/llGoodInfo"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:gravity="center_vertical"
-            android:orientation="vertical"
-            android:paddingLeft="@dimen/size_5"
-            android:paddingRight="@dimen/activity_vertical_margin">
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            tools:background="@android:color/white">
 
-            <TextView
-                android:id="@+id/tv11"
+            <CheckBox
+                android:id="@+id/check"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="【情人节限量】  永生花音乐盒 金重约重约重约1.011可" />
+                android:paddingLeft="@dimen/activity_vertical_margin"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:button="@drawable/selector_radio"
+                android:focusable="false"
+                android:gravity="center" />
+
+            <ImageView
+                android:id="@+id/ivGoods"
+                android:layout_width="@dimen/size_80"
+                android:layout_height="@dimen/size_80"
+                android:background="@drawable/img_default" />
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:id="@+id/llGoodInfo"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/size_5"
+                android:paddingRight="@dimen/activity_vertical_margin">
 
                 <TextView
+                    android:id="@+id/tv11"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="已选择:3cm;"
-                    android:textColor="@color/textColorNormal" />
+                    android:text="【情人节限量】  永生花音乐盒 金重约重约重约1.011可" />
 
-                <TextView
-                    android:id="@+id/tv_express"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="   快递配送"
-                    android:textColor="@color/textColorNormal" />
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="已选择:3cm;"
+                        android:textColor="@color/textColorNormal" />
+
+                    <TextView
+                        android:id="@+id/tv_express"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="   快递配送"
+                        android:textColor="@color/textColorNormal" />
 
 
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="1dp"
-                    android:layout_weight="1" />
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="1" />
 
-                <Button
-                    android:id="@+id/e_btn_invalid"
-                    android:layout_width="@dimen/size_55"
-                    android:layout_height="@dimen/size_30"
-                    android:layout_marginLeft="@dimen/activity_vertical_margin"
-                    android:background="@android:color/darker_gray"
-                    android:enabled="false"
-                    android:text="已失效" />
+                    <Button
+                        android:id="@+id/e_btn_invalid"
+                        android:layout_width="@dimen/size_55"
+                        android:layout_height="@dimen/size_30"
+                        android:layout_marginLeft="@dimen/activity_vertical_margin"
+                        android:background="@android:color/darker_gray"
+                        android:enabled="false"
+                        android:text="已失效" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$499"
+                        android:textColor="@color/product_item_red_rate"
+                        android:textSize="@dimen/size_15" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" 999"
+                        android:textColor="@color/textColorNormal" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:id="@+id/s_tv_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="数量X1"
+                        android:textColor="@color/textColorNormal" />
+
+                    <com.example.wuxie.widget.AddReduceEditText
+                        android:id="@+id/e_aet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="few" />
+                </LinearLayout>
 
             </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="$499"
-                    android:textColor="@color/product_item_red_rate"
-                    android:textSize="@dimen/size_15" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text=" 999"
-                    android:textColor="@color/textColorNormal" />
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="1dp"
-                    android:layout_weight="1" />
-
-                <TextView
-                    android:id="@+id/s_tv_number"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="数量X1"
-                    android:textColor="@color/textColorNormal" />
-
-                <com.example.wuxie.widget.AddReduceEditText
-                    android:id="@+id/e_aet"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="few" />
-            </LinearLayout>
-
         </LinearLayout>
-    </LinearLayout>
-</FrameLayout>
+    </FrameLayout>
 
 
+</layout>
