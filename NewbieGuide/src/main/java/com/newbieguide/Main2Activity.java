@@ -80,7 +80,7 @@ public class Main2Activity extends Activity {
     public void  hello3(View view){
         new NewbieGuideManager(this, NewbieGuideManager.TYPE_LIST)
                 .addView(findViewById(R.id.image), HoleBean.TYPE_ROUDRECT)
-                .addView(findViewById(R.id.image),imageView,0,0)
+                .addView(findViewById(R.id.image),imageView,0,-0.2f)
                 .show();
 
     }

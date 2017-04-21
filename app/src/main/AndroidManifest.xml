@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".DataBindingActivity"></activity>
+        <activity android:name=".mycart.MyCartActivity"></activity>
     </application>
 
 </manifest>

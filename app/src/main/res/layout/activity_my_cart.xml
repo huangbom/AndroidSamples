@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/title_layout_1_3" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/rlShoppingCartEmpty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:visibility="invisible">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/sym_action_email" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="购物车为空" />
+        </LinearLayout>
+
+        <ExpandableListView
+            android:id="@+id/expandableListView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:footerDividersEnabled="false"
+            android:groupIndicator="@null"
+            android:headerDividersEnabled="false"
+            android:longClickable="true"
+            android:scrollbars="none" />
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_46"
+        android:background="#ddd"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:paddingLeft="@dimen/activity_vertical_margin"
+            android:paddingRight="@dimen/activity_vertical_margin">
+
+            <CheckBox
+                android:id="@+id/check"
+                android:onClick="updateAll"
+                android:layout_width="wrap_content"
+                android:text="    全选"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:button="@drawable/selector_radio"
+                />
+
+            <TextView
+                android:visibility="invisible"
+                android:id="@+id/tv_haixuzhifu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="right"
+                android:textSize="@dimen/text_size_16"
+                tools:text="预计还需付" />
+        </FrameLayout>
+
+        <Button
+            android:id="@+id/btn_now_buy"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:background="@android:color/holo_orange_light"
+            android:onClick="nowBuy"
+            android:text="立即支付" />
+
+    </LinearLayout>
+
+</LinearLayout>

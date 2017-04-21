@@ -3,4 +3,13 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+
+    <color name="divider">#eae9e8</color>
+    <color name="blue_light">#57b6e2</color>
+    <color name="textColorTitle">#303134</color>
+    <color name="textColorNormal">#999999</color>
+    <color name="product_item_red_rate">#ea5455</color>
+
+
 </resources>

@@ -1,7 +1,6 @@
 package com.newbieguide;
 
 import android.app.Activity;
-import android.graphics.Rect;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.MotionEvent;
@@ -66,31 +65,29 @@ public class NewbieGuide {
             vg.removeView(view);
         }
 
-        Rect re = new Rect();
+//        Rect re = new Rect();
+//        int[] location = new int[2];
+//        target.getLocationOnScreen(location);
+//        re.left = location[0];
+//        re.top = location[1];
+//        re.right = location[0] + target.getWidth();
+//        re.bottom = location[1] + target.getHeight();
+
+
+        // 得到view在屏幕上的位置
         int[] location = new int[2];
         target.getLocationOnScreen(location);
-        re.left = location[0];
-        re.top = location[1];
-        re.right = location[0] + target.getWidth();
-        re.bottom = location[1] + target.getHeight();
+        int left = location[0];
+        int bottom = location[1] + target.getHeight();
 
-        Log.d(TAG, "addRelativeView: re.left "+re.left);
-        Log.d(TAG, "addRelativeView: re.bottom "+re.bottom);
+        Log.d(TAG, "addRelativeView: re.left "+left);
+        Log.d(TAG, "addRelativeView: re.bottom " + bottom);
 
         RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams
                 .WRAP_CONTENT);
 
-        int height = target.getHeight();
-        int width = target.getWidth();
-
-        int left = target.getLeft();
-        int bottom = target.getBottom();
-
-        Log.d(TAG, "addRelativeView: left " + left);
-        Log.d(TAG, "addRelativeView: bottom " + bottom);
-
-        lp.leftMargin = left + (int)(width * xPercent);
-        lp.topMargin = bottom + (int)(height * yPercent);
+        lp.leftMargin = left + (int)(target.getWidth() * xPercent);
+        lp.topMargin = bottom + (int)(target.getHeight() * yPercent);
 
         view.setOnClickListener(new View.OnClickListener() {
             @Override
