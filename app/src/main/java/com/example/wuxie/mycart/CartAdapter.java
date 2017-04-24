@@ -2,18 +2,17 @@ package com.example.wuxie.mycart;
 
 import android.content.Context;
 import android.databinding.DataBindingUtil;
+import android.graphics.Paint;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.CompoundButton;
-import android.widget.TextView;
+import android.widget.EditText;
 
 import com.example.wuxie.R;
 import com.example.wuxie.base.BaseExpanAdapter;
 import com.example.wuxie.databinding.ItemCartChildrenBinding;
-import com.example.wuxie.widget.AddReduceEditText;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,18 +36,19 @@ public class CartAdapter extends BaseExpanAdapter<MyCartActivity.ShopModel,MyCar
 
     private static final String TAG = "CartAdapter";
 
-    private List<Long> mEditIds,mSelectIds,mAllList;
+//    private List<Long> mEditIds,mSelectIds,mAllList;
+    private List<MyCartActivity.ShopModel.ProduModel> mEditGoods,mSelectGoods,mAllList;
 
     private boolean mIsEdit = false;
 
     public CartAdapter(Context c, List<MyCartActivity.ShopModel> list) {
         super(c, list);
 
-        mEditIds = new ArrayList<>();
-        mSelectIds = new ArrayList<>();
+        mEditGoods = new ArrayList<>();
+        mSelectGoods = new ArrayList<>();
         mAllList = new ArrayList<>();
         for (MyCartActivity.ShopModel model: super.getList()){
-            mAllList.addAll(model.getChildrenIds());
+            mAllList.addAll(model.getChildrenList());
         }
 
         // Invalid of Invalid
@@ -84,30 +84,22 @@ public class CartAdapter extends BaseExpanAdapter<MyCartActivity.ShopModel,MyCar
 //            convertView = View.inflate(mContext,R.layout.item_cart_children,null);
 //        }
 
-        TextView tv = getAdapterView(convertView,R.id.tv_express);
-        Button e_btn_invalid = getAdapterView(convertView,R.id.e_btn_invalid);
-        AddReduceEditText e_aet = getAdapterView(convertView,R.id.e_aet);
-        TextView s_tv_number = getAdapterView(convertView,R.id.s_tv_number);
+        binding.eAet.setVisibility(mIsEdit ?  View.VISIBLE : View.GONE);
+        binding.eBtnInvalid.setVisibility(mIsEdit ?  View.VISIBLE : View.GONE);
+        binding.tvExpress.setCompoundDrawables(null, null,mIsEdit ? mContext.getResources().getDrawable(android.R.drawable.arrow_down_float) : null, null);
 
-        tv.setCompoundDrawables(null, null,mIsEdit ? mContext.getResources().getDrawable(android.R.drawable.arrow_down_float) : null, null);
-        e_btn_invalid.setVisibility(mIsEdit ?  View.VISIBLE : View.GONE); // TODO 还有一个条件，失效
-        e_aet.setVisibility(mIsEdit ?  View.VISIBLE : View.GONE);
-        s_tv_number.setVisibility(mIsEdit ?  View.GONE : View.VISIBLE);
+        binding.sTvNumber.setVisibility(mIsEdit ?  View.GONE : View.VISIBLE);
 
-        List<Long> list = mIsEdit ? mEditIds : mSelectIds;
+        binding.textView2.setPaintFlags(Paint.STRIKE_THRU_TEXT_FLAG);
 
-//        long childId = getChildId(groupPosition, childPosition);
-//        Log.d(TAG, "getChildView: childId : " + childId);
 
+        List<MyCartActivity.ShopModel.ProduModel> list = mIsEdit ? mEditGoods : mSelectGoods;
 
 
         MyCartActivity.ShopModel.ProduModel child = getChild(groupPosition, childPosition);
-        child.setCheck(list.contains(child.getChildId()));
-//        child.setEdit(mIsEdit);
+        child.setCheck(list.contains(child));
         binding.setPresenter(new Persenter());
         binding.setGoods(child);
-
-//        binding.setIsEdit(mIsEdit);
 
         return convertView;
     }
@@ -121,7 +113,7 @@ public class CartAdapter extends BaseExpanAdapter<MyCartActivity.ShopModel,MyCar
 
     public void updateAll(boolean isSelect){
 
-        List list = mIsEdit ? mEditIds : mSelectIds ;
+        List list = mIsEdit ? mEditGoods : mSelectGoods ;
 
         // 默认只有编辑可全选
 
@@ -133,20 +125,30 @@ public class CartAdapter extends BaseExpanAdapter<MyCartActivity.ShopModel,MyCar
             list.clear();
         }
 
-        Log.d(TAG, "updateAll: sele : "+mSelectIds);
-        Log.d(TAG, "updateAll: edit : "+ mEditIds);
+        Log.d(TAG, "updateAll: sele : "+ mSelectGoods);
+        Log.d(TAG, "updateAll: edit : "+ mEditGoods);
         Log.d(TAG, "updateAll: all  : "+ mAllList);
 
         notifyDataSetInvalidated();
     }
 
-    public List<Long> getSelectIds(){
-        return mSelectIds;
+
+    public List<Long> getGoodsIds(){
+        List<Long> listIds = new ArrayList<>();
+
+
+        for (MyCartActivity.ShopModel.ProduModel model : getGoods()){
+            listIds.add(model.getChildId());
+        }
+
+        return listIds;
     }
 
-    public List<Long> getEditIds(){
-        return mEditIds;
+    public List<MyCartActivity.ShopModel.ProduModel> getGoods(){
+        Log.d(TAG, "getGoods: isEdit " + mIsEdit);
+        return mIsEdit ? mEditGoods : mSelectGoods;
     }
+
 
     @Override
     public boolean isChildSelectable(int groupPosition, int childPosition) {
@@ -155,20 +157,55 @@ public class CartAdapter extends BaseExpanAdapter<MyCartActivity.ShopModel,MyCar
 
 
     public class Persenter{
-        public void onCheckBoxClick(View button, MyCartActivity.ShopModel.ProduModel model){
-            CompoundButton btn = (CompoundButton)button;
+        public void onCheckBoxClick(CompoundButton btn, MyCartActivity.ShopModel.ProduModel model){
+//            CompoundButton btn = (CompoundButton)button;
             Log.d(TAG, "onCheckedChanged: "+ btn.isChecked());
 
             // list 也是引用类型
-            List<Long> list = mIsEdit? mEditIds : mSelectIds;
+            List<MyCartActivity.ShopModel.ProduModel> list = getGoods();
+
             long childId = model.getChildId();
             Log.d(TAG, "onCheckBoxClick: "+childId);
 
             if (btn.isChecked()){
-                list.add(childId);
+                list.add(model);
             } else {
-                list.remove(childId);
+                list.remove(model);
             }
+        }
+
+        public void onExpressClick(View view){
+
+            Log.d(TAG, "onExpressClick: " + mIsEdit);
+        }
+        
+        public void addNumber(EditText et,MyCartActivity.ShopModel.ProduModel v){
+            int s = Integer.valueOf(et.getText().toString());   // 这里要做一下一场处理
+            if (s >= Integer.MAX_VALUE){
+                Log.d(TAG, "addNumber: max");
+                return;
+            }
+
+            s++;
+
+            et.setText(String.valueOf(s));
+
+            Log.d(TAG, "addNumber: "+ v.getNumber() );
+        }
+
+
+        public void reduceNumber(EditText et,MyCartActivity.ShopModel.ProduModel v){
+            int s = Integer.valueOf(et.getText().toString());   // 这里要做一下一场处理
+            if (s <= 0){
+                Log.d(TAG, "addNumber: min");
+                return;
+            }
+
+            s--;
+
+            et.setText(String.valueOf(s));
+
+            Log.d(TAG, "addNumber: "+ v.getNumber() );
         }
     }
 }

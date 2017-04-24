@@ -127,14 +127,15 @@ public class MyCartActivity extends NewBaseActivity {
 
 
     public void nowBuy(View view){
-        if (_isEdit){
-            Log.d(TAG, "nowBuy: 删除选择");
-            Log.d(TAG, "nowBuy: " + mCartAdapter.getEditIds());
-        } else{
-            Log.d(TAG, "nowBuy: ti jiao ding dan");
-            Log.d(TAG, "nowBuy: " + mCartAdapter.getSelectIds());;
-        }
+//        if (_isEdit){
+//            Log.d(TAG, "nowBuy: 删除选择");
+//            Log.d(TAG, "nowBuy: " + mCartAdapter.getEditIds());
+//        } else{
+//            Log.d(TAG, "nowBuy: ti jiao ding dan");
+//            Log.d(TAG, "nowBuy: " + mCartAdapter.getSelectIds());;
+//        }
 
+        Log.d(TAG, "nowBuy: "+ mCartAdapter.getGoodsIds());
     }
 
     @Override
@@ -183,6 +184,16 @@ public class MyCartActivity extends NewBaseActivity {
             public int p_id;
             public boolean isCheck;
 
+            public String getNumber() {
+                return number;
+            }
+
+            public void setNumber(String number) {
+                this.number = number;
+            }
+
+            public String number = "1";
+
             public boolean isEdit() {
                 return isEdit;
             }
@@ -211,8 +222,13 @@ public class MyCartActivity extends NewBaseActivity {
             public long getChildId() {
                 return p_id;
             }
+
+            @Override
+            public String toString() {
+                return "[" + p_id + " : "+ number +"]";
+//                return super.toString();
+            }
         }
 
     }
-
 }

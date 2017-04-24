@@ -44,19 +44,19 @@
             android:checked="@{goods.isCheck()}"
             android:focusable="false"
             android:gravity="center"
-            android:onClick="@{(v) -> presenter.onCheckBoxClick(v,goods)}"
+            android:onClick="@{(v) -> presenter.onCheckBoxClick(check,goods)}"
             android:paddingLeft="@dimen/activity_vertical_margin" />
 
         <ImageView
             android:id="@+id/ivGoods"
             android:layout_width="@dimen/size_80"
-            android:layout_height="@dimen/size_86"
+            android:layout_height="@dimen/size_81"
             android:background="@drawable/img_default" />
 
         <LinearLayout
             android:id="@+id/llGoodInfo"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_vertical"
             android:orientation="vertical"
@@ -85,6 +85,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="   快递配送"
+                    android:onClick="@{presenter::onExpressClick}"
                     android:textColor="@color/textColorNormal" />
 
 
@@ -118,6 +119,7 @@
                     android:textSize="@dimen/size_15" />
 
                 <TextView
+                    android:id="@+id/textView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text=" 999"
@@ -136,12 +138,47 @@
                     android:textColor="@color/textColorNormal"
                     />
 
-                <com.example.wuxie.widget.AddReduceEditText
+                <LinearLayout
+                    android:background="@drawable/ic_border"
                     android:id="@+id/e_aet"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1"
-                    />
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/iv_reduce"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:onClick="@{() -> presenter.addNumber(etNumber,goods)}"
+                        android:src="@drawable/ic_reduce" />
+
+                    <EditText
+                        android:layout_gravity="center_vertical"
+                        android:id="@+id/et_number"
+                        android:padding="5dp"
+                        android:inputType="number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:text='@={goods.number}'
+                        tools:text="1"/>
+
+
+                    <ImageView
+                        android:onClick="@{() -> presenter.reduceNumber(etNumber,goods)}"
+                        android:padding="10dp"
+                        android:id="@+id/iv_add"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_add" />
+                </LinearLayout>
+                <!--<com.example.wuxie.widget.AddReduceEditText-->
+                    <!--android:id="@+id/e_aet"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="1"-->
+                    <!--/>-->
             </LinearLayout>
 
         </LinearLayout>
