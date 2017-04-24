@@ -91,6 +91,14 @@
                     android:text="   快递配送"
                     android:textColor="@color/textColorNormal" />
 
+                <ImageView
+                    android:id="@+id/e_iv_arrow"
+                    android:padding="@dimen/size_3"
+                    android:layout_gravity="bottom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_arrow2"
+                    />
 
                 <View
                     android:layout_width="0dp"

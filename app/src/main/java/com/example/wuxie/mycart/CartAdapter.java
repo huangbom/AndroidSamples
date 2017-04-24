@@ -86,7 +86,7 @@ public class CartAdapter extends BaseExpanAdapter<MyCartActivity.ShopModel,MyCar
 
         binding.eAet.setVisibility(mIsEdit ?  View.VISIBLE : View.GONE);
         binding.eBtnInvalid.setVisibility(mIsEdit ?  View.VISIBLE : View.GONE);
-        binding.tvExpress.setCompoundDrawables(null, null,mIsEdit ? mContext.getResources().getDrawable(android.R.drawable.arrow_down_float) : null, null);
+        binding.eIvArrow.setVisibility(mIsEdit ?  View.VISIBLE : View.GONE);
 
         binding.sTvNumber.setVisibility(mIsEdit ?  View.GONE : View.VISIBLE);
 

@@ -16,9 +16,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DataBindingActivity"></activity>
-        <activity android:name=".mycart.MyCartActivity"
-            />
+        <activity android:name=".DataBindingActivity" />
+        <activity android:name=".mycart.MyCartActivity" />
+        <activity
+            android:name=".Main3Activity"
+            android:label="@string/title_activity_main3" />
+        <activity
+            android:name=".ScrollingActivity"
+            android:label="@string/title_activity_scrolling"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>
