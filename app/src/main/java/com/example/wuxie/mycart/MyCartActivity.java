@@ -61,6 +61,8 @@ public class MyCartActivity extends NewBaseActivity {
         expandableListView.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
 
             public boolean onGroupClick(ExpandableListView expandableListView, View view, int i, long l) {
+                Log.d(TAG, "onGroupClick: i :" +i +"  l : "+l);
+                mCartAdapter.selectGroup(i);
                 return true;
             }
         });
@@ -110,10 +112,6 @@ public class MyCartActivity extends NewBaseActivity {
         super.onStop();
     }
 
-    public void updateAllSelectStatus(){
-//        mCheck.setChecked();
-    }
-
     boolean _isEdit = false;
 
 
@@ -123,7 +121,6 @@ public class MyCartActivity extends NewBaseActivity {
 //        Log.d(TAG, "nowBuy: " + mCartAdapter.getSelectIds());;
         Log.d(TAG, "nowBuy: " + mNowBuy.getText().toString());
     }
-
 
 
     public void nowBuy(View view){

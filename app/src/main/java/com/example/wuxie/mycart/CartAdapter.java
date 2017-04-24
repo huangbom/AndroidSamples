@@ -132,6 +132,17 @@ public class CartAdapter extends BaseExpanAdapter<MyCartActivity.ShopModel,MyCar
         notifyDataSetInvalidated();
     }
 
+    public void selectGroup(int groupPosition){
+        List<MyCartActivity.ShopModel.ProduModel> goods = getGoods();
+        for (MyCartActivity.ShopModel.ProduModel model :
+            getGroup(groupPosition).getChildrenList()) {
+            if (! goods.contains(model)){
+                goods.add(model);
+            }
+        }
+        notifyDataSetInvalidated();
+    }
+
 
     public List<Long> getGoodsIds(){
         List<Long> listIds = new ArrayList<>();
