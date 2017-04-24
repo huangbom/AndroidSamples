@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ExpandableListView;
+import android.widget.TextView;
 
 import com.example.wuxie.R;
 import com.example.wuxie.base.IExpandChild;
@@ -31,6 +32,7 @@ public class MyCartActivity extends NewBaseActivity {
     ExpandableListView expandableListView;
     Button mNowBuy;
     CompoundButton mCheck;
+    TextView s_tv_haixuzhifu;
 
     java.util.List<ShopModel> mListGroups = new ArrayList<>();
     CartAdapter mCartAdapter;
@@ -45,14 +47,11 @@ public class MyCartActivity extends NewBaseActivity {
         setTitle("购物车");
         setMenuTitle(null,"编辑");
 
-
+        s_tv_haixuzhifu = $(R.id.s_tv_haixuzhifu);
         mNowBuy = $(R.id.btn_now_buy);
         mCheck = $(R.id.check);
         expandableListView = $(R.id.expandableListView);
-        // 先初始化一个列表
-        // 单个选择框可选
-        // 组可选，并响应全选事件
-        // 标记模式
+
 
         initMockData();
 
@@ -124,15 +123,7 @@ public class MyCartActivity extends NewBaseActivity {
 
 
     public void nowBuy(View view){
-//        if (_isEdit){
-//            Log.d(TAG, "nowBuy: 删除选择");
-//            Log.d(TAG, "nowBuy: " + mCartAdapter.getEditIds());
-//        } else{
-//            Log.d(TAG, "nowBuy: ti jiao ding dan");
-//            Log.d(TAG, "nowBuy: " + mCartAdapter.getSelectIds());;
-//        }
-
-        Log.d(TAG, "nowBuy: "+ mCartAdapter.getGoodsIds());
+        Log.d(TAG, "nowBuy: "+ mCartAdapter.getGoods());
     }
 
     @Override
@@ -140,6 +131,9 @@ public class MyCartActivity extends NewBaseActivity {
         _isEdit = !_isEdit ;
         setMenuTitle(null,_isEdit ? "完成" : "编辑");
         mNowBuy.setText(_isEdit ? "删除选择" : "提交订单");
+
+        s_tv_haixuzhifu.setVisibility(_isEdit ? View.GONE : View.VISIBLE);
+        mCheck.setVisibility(_isEdit ? View.VISIBLE : View.GONE);
 
         mCartAdapter.setEditMode(_isEdit);
 
