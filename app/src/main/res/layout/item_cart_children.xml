@@ -31,10 +31,13 @@
         android:descendantFocusability="blocksDescendants"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:padding="@dimen/activity_vertical_margin"
+        android:paddingRight="@dimen/activity_vertical_margin"
+        android:paddingTop="@dimen/size_8"
+        android:paddingBottom="@dimen/size_8"
         tools:background="@android:color/white">
 
         <CheckBox
+            android:paddingRight="@dimen/size_5"
             android:id="@+id/check"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -44,7 +47,7 @@
             android:focusable="false"
             android:gravity="center"
             android:onClick="@{(v) -> presenter.onCheckBoxClick(check,goods)}"
-            android:paddingRight="@dimen/size_6" />
+            />
 
         <ImageView
             android:id="@+id/ivGoods"
@@ -59,8 +62,7 @@
             android:layout_weight="1"
             android:gravity="center_vertical"
             android:orientation="vertical"
-            android:paddingLeft="@dimen/size_5"
-            android:paddingRight="@dimen/activity_vertical_margin">
+            android:paddingLeft="@dimen/size_5">
 
             <TextView
                 android:id="@+id/tv11"
@@ -70,13 +72,13 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/size_26"
                 android:orientation="horizontal">
 
                 <TextView
-                    android:gravity="bottom"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:gravity="bottom"
                     android:text="已选择:3cm;"
                     android:textColor="@color/textColorNormal" />
 
@@ -98,8 +100,7 @@
                 <Button
                     android:id="@+id/e_btn_invalid"
                     android:layout_width="@dimen/size_50"
-                    android:layout_height="@dimen/size_28"
-                    android:layout_marginLeft="@dimen/activity_vertical_margin"
+                    android:layout_height="match_parent"
                     android:background="@android:color/darker_gray"
                     android:enabled="false"
                     android:text="已失效" />
