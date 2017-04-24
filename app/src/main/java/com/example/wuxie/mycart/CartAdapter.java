@@ -6,7 +6,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CheckBox;
 import android.widget.CompoundButton;
 
 import com.example.wuxie.R;
@@ -27,14 +26,16 @@ public class CartAdapter extends BaseExpanAdapter<MyCartActivity.ShopModel,MyCar
     // 获取所有删除列表
     // 切换两种状态，看状态是否有保留
     // 做编辑操作　
+    // 全选按钮的状态要改变
 
+    // 保留商品数量
     // item点击事件／普通状态时点击去商品页，编辑状态时选中列表
 
     private static final String TAG = "CartAdapter";
 
-    List<Long> mEditIds,mSelectIds,mAllList;
+    private List<Long> mEditIds,mSelectIds,mAllList;
 
-    boolean isEdit = false;
+    private boolean isEdit = false;
 
     public CartAdapter(Context c, List<MyCartActivity.ShopModel> list) {
         super(c, list);
@@ -42,11 +43,9 @@ public class CartAdapter extends BaseExpanAdapter<MyCartActivity.ShopModel,MyCar
         mEditIds = new ArrayList<>();
         mSelectIds = new ArrayList<>();
         mAllList = new ArrayList<>();
-
-//        for (MyCartActivity.ShopModel mode : list) {
-//            mAllList.addAll(mode.getChildrenList());
-//        }
-
+        for (MyCartActivity.ShopModel model: super.getList()){
+            mAllList.addAll(model.getChildrenIds());
+        }
     }
 
     public void setEditMode(boolean isEdit){
@@ -75,91 +74,42 @@ public class CartAdapter extends BaseExpanAdapter<MyCartActivity.ShopModel,MyCar
         ItemCartChildrenBinding binding ;
         if (convertView == null){
             binding = DataBindingUtil.inflate(LayoutInflater.from(mContext),R.layout.item_cart_children,null,false);
-//            convertView = LayoutInflater.from(mContext).inflate( R.layout.item_cart_children, null, false);
         }else{
             binding = DataBindingUtil.getBinding(convertView);
         }
 
         List<Long> list = isEdit ? mEditIds : mSelectIds;
 
-        CheckBox checkBox = binding.check;
-
-//        CheckBox checkBox = getAdapterView(convertView, R.id.check);
-        long childId = getChildId(groupPosition, childPosition);
-//        Log.d(TAG, String.format("getChildView:%d groupPosition:%d childPosition:%d",groupPosition,childPosition,childId));
-//        Log.d(TAG, "getChildView: list "+list);
-
-//        CheckBoxox.setChecked(list.contains(childId));
-
-        binding.setIsCheck(list.contains(childId));
-
-        checkBox.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                CompoundButton btn = (CompoundButton)v;
-                Log.d(TAG, "onCheckedChanged: "+ btn.isChecked());
-
-//                // list 也是引用类型
-                List<Long> list = isEdit? mEditIds : mSelectIds;
-
-                if (btn.isChecked()){
-                    list.add(getChildId(groupPosition,childPosition));
-                } else {
-                    list.remove(getChildId(groupPosition,childPosition));
-                }
-
-                getChild(groupPosition,childPosition).setCheck(btn.isChecked());
-
-            }
-        });
-//        getAdapterView(convertView,R.id.tv_express).setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if (isEdit){
-//                    Log.d(TAG, "onClick: tvExpress");
-//                }
-//            }
-//        });
+//        long childId = getChildId(groupPosition, childPosition);
+//        Log.d(TAG, "getChildView: childId : " + childId);
+        MyCartActivity.ShopModel.ProduModel child = getChild(groupPosition, childPosition);
+        child.setCheck(list.contains(child.getChildId()));
+        binding.setPresenter(new Persenter());
+        binding.setGoods(child);
 
         convertView = binding.getRoot();
-//        binding.tvExpress.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if (isEdit){
-//                    Log.d(TAG, "onClick: tvExpress");
-//                }
-//            }
-//        });
-//
-//        binding.check.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-//            @Override
-//            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-//                Log.d(TAG, "onCheckedChanged: "+isChecked);
-//
-//                // list 也是引用类型
-//                List<Long> list = isEdit? mEditIds : mSelectIds;
-//
-//                if (isChecked){
-//                    list.add(getGroupId(groupPosition));
-//                } else {
-//                    list.remove(getGroupId(groupPosition));
-////                    mSelectIds.remove(group)
-//                }
-//
-//                getChild(groupPosition,childPosition).setCheck(isChecked);
-//            }
-//        });
-
-//        binding.setIsEdit(isEdit);
-//        binding.executePendingBindings();
-
         return convertView;
     }
 
     public void updateAll(boolean isSelect){
-        if (isSelect){
 
+        List list = isEdit ? mEditIds : mSelectIds ;
+
+        // 默认只有编辑可全选
+
+        if (isSelect){
+            list.clear();
+            list.addAll(mAllList);
+        } else{
+            // cancel select all
+            list.clear();
         }
+
+        Log.d(TAG, "updateAll: sele : "+mSelectIds);
+        Log.d(TAG, "updateAll: edit : "+ mEditIds);
+        Log.d(TAG, "updateAll: all  : "+ mAllList);
+
+        notifyDataSetInvalidated();
     }
 
     public List<Long> getSelectIds(){
@@ -176,4 +126,21 @@ public class CartAdapter extends BaseExpanAdapter<MyCartActivity.ShopModel,MyCar
     }
 
 
+    public class Persenter{
+        public void onCheckBoxClick(View button, MyCartActivity.ShopModel.ProduModel model){
+            CompoundButton btn = (CompoundButton)button;
+            Log.d(TAG, "onCheckedChanged: "+ btn.isChecked());
+
+//                // list 也是引用类型
+            List<Long> list = isEdit? mEditIds : mSelectIds;
+            long childId = model.getChildId();
+            Log.d(TAG, "onCheckBoxClick: "+childId);
+
+            if (btn.isChecked()){
+                list.add(childId);
+            } else {
+                list.remove(childId);
+            }
+        }
+    }
 }

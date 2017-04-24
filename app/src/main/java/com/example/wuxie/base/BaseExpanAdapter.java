@@ -23,6 +23,10 @@ public abstract class BaseExpanAdapter<G extends IExpandGroup,C extends IExpandC
         mList = list;
     }
 
+    protected List<G> getList(){
+        return mList;
+    }
+
     @Override
     public int getGroupCount() {
         return mList.size();

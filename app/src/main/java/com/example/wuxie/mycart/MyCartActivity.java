@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ExpandableListView;
 
@@ -20,12 +21,15 @@ public class MyCartActivity extends NewBaseActivity {
 
     private static final String TAG = "MyCartActivity";
 
+
     public static void start(Context context) {
         Intent intent = new Intent(context, MyCartActivity.class);
         context.startActivity(intent);
     }
 
     ExpandableListView expandableListView;
+    Button mNowBuy;
+
     java.util.List<ShopModel> mListGroups = new ArrayList<>();
     CartAdapter mCartAdapter;
 
@@ -40,6 +44,7 @@ public class MyCartActivity extends NewBaseActivity {
         setMenuTitle(null,"编辑");
 
 
+        mNowBuy = $(R.id.btn_now_buy);
         expandableListView = $(R.id.expandableListView);
         // 先初始化一个列表
         // 单个选择框可选
@@ -47,32 +52,6 @@ public class MyCartActivity extends NewBaseActivity {
         // 标记模式
 
         initMockData();
-        expandAllGroup();
-    }
-
-
-    public void nowBuy(View view){
-        Log.d(TAG, "nowBuy: " + mCartAdapter.getSelectIds());;
-        Log.d(TAG, "nowBuy: ");
-    }
-
-    void initMockData(){
-
-        int k = 1;
-        for (int i = 0 ; i< 5; i++){
-            ShopModel model = new ShopModel(i);
-            model.shopTitle = "dian pu "+i;
-
-            for (int j = 0; j < 5; j++) {
-                ShopModel.ProduModel pmode = new ShopModel.ProduModel(k++);
-//                Log.d(TAG, "initMockData: " + (k++));
-                model.pList.add(pmode);
-            }
-
-            mListGroups.add(model);
-        }
-
-        Log.d(TAG, "initMockData: "+ mListGroups);
 
         mCartAdapter = new CartAdapter(this, mListGroups);
         expandableListView.setAdapter(mCartAdapter);
@@ -90,12 +69,31 @@ public class MyCartActivity extends NewBaseActivity {
                 return true;
             }
         });
-    }
 
-    private void expandAllGroup() {
+        // expand All Group
         for (int i = 0; i < mListGroups.size(); i++) {
             expandableListView.expandGroup(i);
         }
+    }
+
+    void initMockData(){
+
+        int k = 1;
+        for (int i = 0 ; i< 5; i++){
+            ShopModel model = new ShopModel(i);
+            model.shopTitle = "dian pu "+i;
+
+            for (int j = 0; j < 5; j++) {
+                ShopModel.ProduModel pmode = new ShopModel.ProduModel(k++);
+                Log.d(TAG, "initMockData: " + (k));
+                model.pList.add(pmode);
+            }
+
+            mListGroups.add(model);
+        }
+
+//        Log.d(TAG, "initMockData: "+ mListGroups);
+
     }
 
     boolean _isEdit = false;
@@ -105,16 +103,27 @@ public class MyCartActivity extends NewBaseActivity {
         CheckBox box = (CheckBox)view;
         mCartAdapter.updateAll(box.isChecked());
 //        Log.d(TAG, "nowBuy: " + mCartAdapter.getSelectIds());;
-        Log.d(TAG, "nowBuy: ");
+        Log.d(TAG, "nowBuy: " + mNowBuy.getText().toString());
     }
 
 
 
+    public void nowBuy(View view){
+        if (_isEdit){
+            Log.d(TAG, "nowBuy: 删除选择");
+            Log.d(TAG, "nowBuy: " + mCartAdapter.getEditIds());
+        } else{
+            Log.d(TAG, "nowBuy: ti jiao ding dan");
+            Log.d(TAG, "nowBuy: " + mCartAdapter.getSelectIds());;
+        }
+
+    }
 
     @Override
     public void onRight2Click(View view) {
         _isEdit = !_isEdit ;
         setMenuTitle(null,_isEdit ? "完成" : "编辑");
+        mNowBuy.setText(_isEdit ? "删除选择" : "提交订单");
 
         mCartAdapter.setEditMode(_isEdit);
 
@@ -166,7 +175,7 @@ public class MyCartActivity extends NewBaseActivity {
 
             public ProduModel(int id) {
                 this.p_id = id;
-                this.isCheck = false;
+//                this.isCheck = false;
              }
 
             @Override

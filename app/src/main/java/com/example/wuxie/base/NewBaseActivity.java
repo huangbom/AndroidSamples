@@ -11,7 +11,6 @@ import android.support.annotation.StringRes;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -76,7 +75,7 @@ public abstract class NewBaseActivity extends AppCompatActivity {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                Toast.makeText(getBaseContext(), msg + "", 0).show();
+                Toast.makeText(getBaseContext(), msg + "", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -118,8 +117,8 @@ public abstract class NewBaseActivity extends AppCompatActivity {
 
     public void setMenuTitle(CharSequence title1, CharSequence title2) {
         try {
-            TextView tv = (TextView) findViewById(R.id.tb_right_tv1);
-            TextView tv2 = (TextView) findViewById(R.id.tb_right_tv2);
+            TextView tv =  $(R.id.tb_right_tv1);
+            TextView tv2 =   $(R.id.tb_right_tv2);
             tv.setText(title1);
             tv2.setText(title2);
         } catch (Exception e) {

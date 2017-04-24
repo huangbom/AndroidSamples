@@ -4,10 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <variable
-            name="isCheck"
-            type="Boolean"/>
 
+        <!--<variable-->
+            <!--name="isCheck"-->
+            <!--type="Boolean"/>-->
+
+        <variable
+            name="goods"
+            type="com.example.wuxie.mycart.MyCartActivity.ShopModel.ProduModel"/>
+
+        <variable
+            name="presenter"
+            type="com.example.wuxie.mycart.CartAdapter.Persenter"/>
 
     </data>
 
@@ -33,6 +41,8 @@
                 android:background="@android:color/transparent"
                 android:button="@drawable/selector_radio"
                 android:focusable="false"
+                android:checked="@{goods.isCheck()}"
+                android:onClick="@{(v) -> presenter.onCheckBoxClick(v,goods)}"
                 android:gravity="center" />
 
             <ImageView
