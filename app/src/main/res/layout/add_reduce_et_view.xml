@@ -11,9 +11,9 @@
 
     <ImageView
         android:id="@+id/iv_reduce"
-        android:padding="8dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:padding="10dp"
         android:src="@drawable/ic_reduce" />
 
     <EditText
@@ -29,7 +29,7 @@
 
 
     <ImageView
-        android:padding="8dp"
+        android:padding="10dp"
         android:id="@+id/iv_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

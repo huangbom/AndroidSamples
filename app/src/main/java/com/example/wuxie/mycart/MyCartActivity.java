@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ExpandableListView;
 
 import com.example.wuxie.R;
@@ -29,6 +30,7 @@ public class MyCartActivity extends NewBaseActivity {
 
     ExpandableListView expandableListView;
     Button mNowBuy;
+    CompoundButton mCheck;
 
     java.util.List<ShopModel> mListGroups = new ArrayList<>();
     CartAdapter mCartAdapter;
@@ -45,6 +47,7 @@ public class MyCartActivity extends NewBaseActivity {
 
 
         mNowBuy = $(R.id.btn_now_buy);
+        mCheck = $(R.id.check);
         expandableListView = $(R.id.expandableListView);
         // 先初始化一个列表
         // 单个选择框可选
@@ -94,6 +97,21 @@ public class MyCartActivity extends NewBaseActivity {
 
 //        Log.d(TAG, "initMockData: "+ mListGroups);
 
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+    }
+
+    public void updateAllSelectStatus(){
+//        mCheck.setChecked();
     }
 
     boolean _isEdit = false;
@@ -164,6 +182,17 @@ public class MyCartActivity extends NewBaseActivity {
         public static class ProduModel implements IExpandChild{
             public int p_id;
             public boolean isCheck;
+
+            public boolean isEdit() {
+                return isEdit;
+            }
+
+            public void setEdit(boolean edit) {
+                isEdit = edit;
+            }
+
+            public boolean isEdit;
+
 
             public boolean isCheck() {
                 return isCheck;
