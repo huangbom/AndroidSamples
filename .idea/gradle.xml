@@ -8,11 +8,9 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/NewbieGuide" />
             <option value="$PROJECT_DIR$/RecyclerViewSnap" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/gravitysnaphelper" />
-            <option value="$PROJECT_DIR$/tBShopCar" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

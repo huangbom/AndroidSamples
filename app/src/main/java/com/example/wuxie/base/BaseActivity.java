@@ -1,4 +1,4 @@
-package com.example.wuxie;
+package com.example.wuxie.base;
 
 import android.support.v7.app.AppCompatActivity;
 

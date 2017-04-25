@@ -4,7 +4,7 @@ import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.wuxie.mycart.MyCartActivity;
+import com.example.wuxie.base.BaseActivity;
 
 public class MainActivity extends BaseActivity {
 
@@ -13,7 +13,7 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         DataBindingUtil.setContentView(this,R.layout.activity_main);
 
-        MyCartActivity.start(this);
+//        MyCartActivity.start(this);
     }
 
     public void onDataBindingClick(View v){

@@ -37,7 +37,7 @@
         tools:background="@android:color/white">
 
         <CheckBox
-            android:paddingRight="@dimen/size_5"
+            android:paddingRight="@dimen/size_8"
             android:id="@+id/check"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"

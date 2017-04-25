@@ -1,4 +1,4 @@
-package com.example.wuxie;
+package com.example.wuxie.app;
 
 import android.app.Application;
 

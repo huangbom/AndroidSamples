@@ -6,6 +6,7 @@
 
     <data>
         <import type="com.example.wuxie.mycart.MyCartActivity" />
+        <import type="com.example.wuxie.bieguide.BieGuideActivity" />
     </data>
 
 <LinearLayout
@@ -24,18 +25,17 @@
         android:onClick="onDataBindingClick"
         android:text="data binding" />
 
-    <com.example.wuxie.widget.AddReduceEditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-    </com.example.wuxie.widget.AddReduceEditText>
-
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="@{(v) -> MyCartActivity.start(v.getContext())}"
         android:text="购物车" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="@{(v) -> BieGuideActivity.start(v.getContext())}"
+        android:text="bie Guide" />
 
 </LinearLayout>
 </layout>

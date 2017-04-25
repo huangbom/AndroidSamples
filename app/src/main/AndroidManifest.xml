@@ -3,7 +3,7 @@
     package="com.example.wuxie">
 
     <application
-        android:name=".SampleApp"
+        android:name=".app.SampleApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -18,13 +18,9 @@
         </activity>
         <activity android:name=".DataBindingActivity" />
         <activity android:name=".mycart.MyCartActivity" />
-        <activity
-            android:name=".Main3Activity"
-            android:label="@string/title_activity_main3" />
-        <activity
-            android:name=".ScrollingActivity"
-            android:label="@string/title_activity_scrolling"
-            android:theme="@style/AppTheme"></activity>
+
+        <activity android:name=".bieguide.BieGuideActivity"/>
+        <activity android:name=".bieguide.BieGuide2Activity"/>
     </application>
 
 </manifest>

@@ -54,13 +54,6 @@ public class CartAdapter extends BaseExpanAdapter<MyCartActivity.ShopModel,MyCar
         // Invalid of Invalid
     }
 
-
-    @Override
-    public MyCartActivity.ShopModel.ProduModel getChild(int groupPosition, int childPosition) {
-        return getGroup(groupPosition).pList.get(childPosition);
-    }
-
-
     @Override
     public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
         if (convertView == null){
