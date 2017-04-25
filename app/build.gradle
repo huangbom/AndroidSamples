@@ -31,10 +31,20 @@ dependencies {
 //    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
 //        exclude group: 'com.android.support', module: 'support-annotations'
 //    })
+
+    // Retrofit & OkHttp
+    compile 'com.squareup.retrofit2:retrofit:2.2.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.2.0'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.6.0'
+    // stetho
+    compile 'com.facebook.stetho:stetho:1.4.2'
+
+// for OkHttp3, if you're using an older version,
+// check the stetho website
+    compile 'com.facebook.stetho:stetho-okhttp3:1.4.2'
+
     compile 'com.android.support:appcompat-v7:23.4.0'
     compile 'com.android.support:design:23.4.0'
     compile 'com.orhanobut:logger:1.15'
-    compile 'com.google.android.gms:play-services-ads:10.2.1'
-    compile 'com.android.support:support-vector-drawable:23.4.0'
     testCompile 'junit:junit:4.12'
 }

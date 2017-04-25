@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.wuxie">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".app.SampleApp"
         android:allowBackup="true"
@@ -18,9 +20,9 @@
         </activity>
         <activity android:name=".DataBindingActivity" />
         <activity android:name=".mycart.MyCartActivity" />
-
-        <activity android:name=".bieguide.BieGuideActivity"/>
-        <activity android:name=".bieguide.BieGuide2Activity"/>
+        <activity android:name=".bieguide.BieGuideActivity" />
+        <activity android:name=".bieguide.BieGuide2Activity" />
+        <activity android:name=".goldapi.RetrofitSampleActivity"></activity>
     </application>
 
 </manifest>

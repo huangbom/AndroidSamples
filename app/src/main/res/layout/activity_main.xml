@@ -37,5 +37,11 @@
         android:onClick="@{(v) -> BieGuideActivity.start(v.getContext())}"
         android:text="bie Guide" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="retrofit"
+        android:text="retrofit sample" />
+
 </LinearLayout>
 </layout>

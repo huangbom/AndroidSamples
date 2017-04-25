@@ -37,9 +37,9 @@
             />
         <include
             layout="@layout/lay_multi_text_img"
-            app:leftImg="@{@drawable/common_full_open_on_phone}"
+            app:leftImg="@{@android:drawable/stat_sys_phone_call_on_hold}"
             app:leftText='@{"分解为"}'
-            app:rightImg="@{@drawable/common_full_open_on_phone}"
+            app:rightImg="@{@android:drawable/stat_sys_phone_call_on_hold}"
             app:rightText='@{"分解为"}'
             app:rightTextPrefix='@{"呃我哦"}'
             app:rightTextSuffix='@{"俯卧 i"}' />
@@ -47,9 +47,9 @@
         <include
             layout="@layout/lay_multi_text_img"
             app:dividerVisibility="@{false}"
-            app:leftImg="@{@drawable/common_full_open_on_phone}"
+            app:leftImg="@{@android:drawable/stat_sys_phone_call_on_hold}"
             app:leftText='@{"分解22"}'
-            app:rightImg="@{@drawable/common_full_open_on_phone}"
+            app:rightImg="@{@android:drawable/stat_sys_phone_call_on_hold}"
             app:rightText='@{"分33为"}'
             app:rightTextPrefix='@{"ew哦"}'
             app:rightTextSuffix='@{"俯4"}' />

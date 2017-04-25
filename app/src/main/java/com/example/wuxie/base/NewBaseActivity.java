@@ -15,6 +15,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.wuxie.R;
+import com.example.wuxie.goldapi.GoldApiUtils;
+import com.example.wuxie.goldapi.GoldClient;
 
 
 /**
@@ -46,7 +48,7 @@ public abstract class NewBaseActivity extends AppCompatActivity {
 
         mContext = this;
         mActivity = this;
-//
+
 //        // 添加Activity到堆栈
 //        AppManager.getAppManager().addActivity(this);
 //        lastClickTimes = new SparseArray<>();
@@ -56,6 +58,9 @@ public abstract class NewBaseActivity extends AppCompatActivity {
 
     }
 
+    protected GoldClient getGoldClient(){
+        return GoldApiUtils.getGoldClient();
+    }
 
     static final int PERMISSIONS_REQUEST_READ_CONTACTS = 0x100;
 
