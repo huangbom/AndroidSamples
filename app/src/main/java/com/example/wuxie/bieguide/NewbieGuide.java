@@ -13,7 +13,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.wuxie.R;
-import com.example.wuxie.utils.ScreenUtils;
+import com.example.wuxie.common.utils.ScreenUtils;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -11,7 +11,7 @@ import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.widget.RelativeLayout;
 
-import com.example.wuxie.utils.ScreenUtils;
+import com.example.wuxie.common.utils.ScreenUtils;
 
 import java.util.List;
 

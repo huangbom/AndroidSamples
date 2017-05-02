@@ -5,7 +5,7 @@ import android.content.SharedPreferences;
 import android.os.Handler;
 import android.view.View;
 
-import com.example.wuxie.utils.ScreenUtils;
+import com.example.wuxie.common.utils.ScreenUtils;
 
 /**
  * Created by xufangzhen on 2016/6/15.

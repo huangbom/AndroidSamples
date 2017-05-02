@@ -186,7 +186,7 @@
                         android:paddingRight="10dp"
                         android:src="@drawable/ic_add" />
                 </LinearLayout>
-                <!--<com.example.wuxie.widget.AddReduceEditText-->
+                <!--<com.example.wuxie.common.widget.AddReduceEditText-->
                 <!--android:id="@+id/e_aet"-->
                 <!--android:layout_width="wrap_content"-->
                 <!--android:layout_height="wrap_content"-->

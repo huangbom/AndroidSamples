@@ -18,13 +18,6 @@ import com.example.wuxie.R;
 import com.example.wuxie.goldapi.GoldApiUtils;
 import com.example.wuxie.goldapi.GoldClient;
 
-
-/**
- * 此类取代BaseActivity,使用的是5.0主题
- *
- * @author jiaohongyun
- * @date 2015年5月22日
- */
 public abstract class NewBaseActivity extends AppCompatActivity {
 
     public static final String TAG = NewBaseActivity.class.getSimpleName();
@@ -48,10 +41,6 @@ public abstract class NewBaseActivity extends AppCompatActivity {
 
         mContext = this;
         mActivity = this;
-
-//        // 添加Activity到堆栈
-//        AppManager.getAppManager().addActivity(this);
-//        lastClickTimes = new SparseArray<>();
 
 
         Log.w("NewBaseActivity", getClass().getName());
@@ -111,12 +100,12 @@ public abstract class NewBaseActivity extends AppCompatActivity {
     }
 
     public void setTitle(CharSequence title) {
-        TextView tv = (TextView) findViewById(R.id.tb_title);
+        TextView tv = $(R.id.tb_title);
         tv.setText(title);
     }
 
     public void setTitle(@StringRes int title) {
-        TextView tv = (TextView) findViewById(R.id.tb_title);
+        TextView tv = $(R.id.tb_title);
         tv.setText(title);
     }
 

@@ -1,4 +1,4 @@
-package com.example.wuxie.utils;
+package com.example.wuxie.common.utils;
 
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;

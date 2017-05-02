@@ -1,4 +1,4 @@
-package com.example.wuxie.widget;
+package com.example.wuxie.common.widget;
 
 import android.content.Context;
 import android.support.annotation.Nullable;
