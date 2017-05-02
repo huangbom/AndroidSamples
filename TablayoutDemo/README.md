@@ -76,7 +76,8 @@ public class PageFragment extends Fragment {
     android:layout_height="match_parent"
     android:gravity="center" />
 ```
-#ViewPager's Adapter
+# ViewPager's Adapter
+
 ```java
 public class SimpleFragmentPagerAdapter extends FragmentPagerAdapter {
 
@@ -150,7 +151,7 @@ tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
 
 源码是这样的：
 
-```
+``` java
 public void setupWithViewPager(ViewPager viewPager) {
     PagerAdapter adapter = viewPager.getAdapter();
     if(adapter == null) {
@@ -194,7 +195,7 @@ app:tabMode="fixed"
 ```   
 还有一些其他的样式可供选择：
 
-```
+```xml
 <style name="MyCustomTabLayout" parent="Widget.Design.TabLayout">
     <item name="tabMaxWidth">@dimen/tab_max_width</item>
     <item name="tabIndicatorColor">?attr/colorAccent</item>
@@ -216,7 +217,7 @@ app:tabMode="fixed"
 
 当前的TabLayout没有方法让我们去添加icon，我们可以使用SpannableString结合ImageSpan来实现，在SimpleFragmentPagerAdapter中：
 
-```
+``` java
 private int[] imageResId = {
         R.drawable.ic_one,
         R.drawable.ic_two,
@@ -239,7 +240,7 @@ public CharSequence getPageTitle(int position) {
 ```
 运行，发现没有显示，这是因为TabLayout创建的tab默认设置textAllCaps属性为true，这阻止了ImageSpan被渲染出来，可以通过下面的样式文件定义来改变：
 
-```
+```xml
 <style name="MyCustomTabLayout" parent="Widget.Design.TabLayout">
       <item name="tabTextAppearance">@style/MyCustomTextAppearance</item>
 </style>
@@ -252,7 +253,7 @@ public CharSequence getPageTitle(int position) {
 
 # add icon and text to tab
 
-```
+```java
 @Override
 public CharSequence getPageTitle(int position) {
     // Generate title based on item position
@@ -272,7 +273,7 @@ public CharSequence getPageTitle(int position) {
 
 适配器中增加getTabView(...)方法：
 
-```
+```java
 public class SimpleFragmentPagerAdapter extends FragmentPagerAdapter {
 
     final int PAGE_COUNT = 3;
@@ -325,7 +326,7 @@ public class SimpleFragmentPagerAdapter extends FragmentPagerAdapter {
 ```
 简单的布局：
 
-```
+```xml
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
