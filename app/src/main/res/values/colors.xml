@@ -11,5 +11,8 @@
     <color name="textColorNormal">#999999</color>
     <color name="product_item_red_rate">#ea5455</color>
 
+    <color name="yellow_normal2_0">#ffec96</color>
+    <color name="yellow_stroke2_0">#ffdd3f</color>
+    <color name="yellow_pressed">#F4c643</color>
 
 </resources>

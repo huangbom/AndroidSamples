@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/yellow_pressed">
+    <item>
+        <selector>
+            <!--<item-->
+                <!--android:drawable="@drawable/yellow_btn_enable"-->
+                <!--android:state_enabled="false" />-->
+
+            <item >
+                <shape android:shape="rectangle">
+                    <stroke android:color="@color/yellow_stroke2_0" android:width="@dimen/size_1" />
+                    <!--<corners android:radius="@dimen/btn_radius" />-->
+                    <solid android:color="@color/yellow_normal2_0" />
+                </shape>
+            </item>
+
+            <!--<item>
+                <shape android:shape="rectangle">
+                    <corners android:radius="@dimen/btn_radius" />
+                    <solid android:color="@color/yellow_normal" />
+                </shape>
+            </item>-->
+        </selector>
+    </item>
+
+</ripple>

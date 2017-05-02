@@ -22,7 +22,8 @@
         <activity android:name=".mycart.MyCartActivity" />
         <activity android:name=".bieguide.BieGuideActivity" />
         <activity android:name=".bieguide.BieGuide2Activity" />
-        <activity android:name=".goldapi.RetrofitSampleActivity"></activity>
+        <activity android:name=".goldapi.RetrofitSampleActivity" />
+        <activity android:name=".BaoBenProductDetailActivity"></activity>
     </application>
 
 </manifest>
