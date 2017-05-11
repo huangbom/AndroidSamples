@@ -8,6 +8,8 @@
         <import type="com.example.wuxie.mycart.MyCartActivity" />
         <import type="com.example.wuxie.bieguide.BieGuideActivity" />
         <import type="com.example.wuxie.TextViewActivity" />
+        <import type="com.example.wuxie.SampleRecleViewActivity"/>
+
     </data>
 
 <LinearLayout
@@ -50,6 +52,13 @@
         android:onClick="retrofit"
         android:background="@drawable/select_yellow2_0btn"
         android:text="retrofit sample" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="@{() -> SampleRecleViewActivity.start(context)}"
+        android:background="@drawable/select_yellow2_0btn"
+        android:text="SampleRecleViewActivity" />
 
 </LinearLayout>
 </layout>

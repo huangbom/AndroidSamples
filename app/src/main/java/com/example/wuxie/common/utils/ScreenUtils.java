@@ -20,7 +20,12 @@ public class ScreenUtils {
         return dp * context.getResources().getDisplayMetrics().density;
     }
 
+    @Deprecated
     public static int dpToPx(Context context, int dp) {
+        return (int) (dp * context.getResources().getDisplayMetrics().density);
+    }
+
+    public static int dp2Px(Context context, int dp) {
         return (int) (dp * context.getResources().getDisplayMetrics().density);
     }
 

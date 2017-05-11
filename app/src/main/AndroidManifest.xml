@@ -24,7 +24,8 @@
         <activity android:name=".bieguide.BieGuide2Activity" />
         <activity android:name=".goldapi.RetrofitSampleActivity" />
         <activity android:name=".BaoBenProductDetailActivity" />
-        <activity android:name=".TextViewActivity"></activity>
+        <activity android:name=".TextViewActivity"/>
+        <activity android:name=".SampleRecleViewActivity"/>
     </application>
 
 </manifest>

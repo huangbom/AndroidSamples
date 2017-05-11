@@ -25,7 +25,7 @@ public class SampleApp extends Application {
         return instance;
     }
 
-    public void <S> S createService(Class<S> serviceClass) {
+    public <S> S createService(Class<S> serviceClass) {
         return ServiceGenerator.createService(serviceClass);
     }
 }
