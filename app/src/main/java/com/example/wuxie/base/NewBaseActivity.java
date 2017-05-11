@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.wuxie.R;
+import com.example.wuxie.ServiceGenerator;
 import com.example.wuxie.goldapi.GoldApiUtils;
 import com.example.wuxie.goldapi.GoldClient;
 
@@ -132,5 +133,8 @@ public abstract class NewBaseActivity extends AppCompatActivity {
         return false;
     }
 
+    public  <S> S  createService(Class<S> serviceClass) {
+        return ServiceGenerator.createService(serviceClass);
+    }
 
 }

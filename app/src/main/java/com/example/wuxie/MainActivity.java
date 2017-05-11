@@ -4,10 +4,10 @@ import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.wuxie.base.BaseActivity;
+import com.example.wuxie.base.NewBaseActivity;
 import com.example.wuxie.goldapi.RetrofitSampleActivity;
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends NewBaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
