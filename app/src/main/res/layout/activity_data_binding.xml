@@ -9,50 +9,50 @@
         android:orientation="vertical">
 
 
-        <include
-            layout="@layout/lay_3text_switch"
-            app:leftText='@{"分解为"}'
-            app:rightText='@{"分解为"}'
-            app:rightTextSuffix='@{"俯卧 i"}' />
+        <!--<include-->
+            <!--layout="@layout/lay_3text_switch"-->
+            <!--app:leftText='@{"分解为"}'-->
+            <!--app:rightText='@{"分解为"}'-->
+            <!--app:rightTextSuffix='@{"俯卧 i"}' />-->
 
-        <include
-            layout="@layout/lay_3text_switch"
-            app:leftText='@{"分解为"}'
-            app:rightText='@{"分解为"}'
-            app:rightTextSuffix='@{"俯卧 i"}'
-            app:dividerVisibility='@{false}'
-            />
+        <!--<include-->
+            <!--layout="@layout/lay_3text_switch"-->
+            <!--app:leftText='@{"分解为"}'-->
+            <!--app:rightText='@{"分解为"}'-->
+            <!--app:rightTextSuffix='@{"俯卧 i"}'-->
+            <!--app:dividerVisibility='@{false}'-->
+            <!--/>-->
 
-        <include
-            layout="@layout/lay_3text_switch"
-            app:leftText='@{"33"}'
-            app:rightText='@{"44"}'
-            app:rightTextSuffix='@{"俯卧 i"}'
-            app:visibility="@{false}" />
+        <!--<include-->
+            <!--layout="@layout/lay_3text_switch"-->
+            <!--app:leftText='@{"33"}'-->
+            <!--app:rightText='@{"44"}'-->
+            <!--app:rightTextSuffix='@{"俯卧 i"}'-->
+            <!--app:visibility="@{false}" />-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="lay_multi_text_img"
-            />
-        <include
-            layout="@layout/lay_multi_text_img"
-            app:leftImg="@{@android:drawable/stat_sys_phone_call_on_hold}"
-            app:leftText='@{"分解为"}'
-            app:rightImg="@{@android:drawable/stat_sys_phone_call_on_hold}"
-            app:rightText='@{"分解为"}'
-            app:rightTextPrefix='@{"呃我哦"}'
-            app:rightTextSuffix='@{"俯卧 i"}' />
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="lay_multi_text_img"-->
+            <!--/>-->
+        <!--<include-->
+            <!--layout="@layout/lay_multi_text_img"-->
+            <!--app:leftImg="@{@android:drawable/stat_sys_phone_call_on_hold}"-->
+            <!--app:leftText='@{"分解为"}'-->
+            <!--app:rightImg="@{@android:drawable/stat_sys_phone_call_on_hold}"-->
+            <!--app:rightText='@{"分解为"}'-->
+            <!--app:rightTextPrefix='@{"呃我哦"}'-->
+            <!--app:rightTextSuffix='@{"俯卧 i"}' />-->
 
-        <include
-            layout="@layout/lay_multi_text_img"
-            app:dividerVisibility="@{false}"
-            app:leftImg="@{@android:drawable/stat_sys_phone_call_on_hold}"
-            app:leftText='@{"分解22"}'
-            app:rightImg="@{@android:drawable/stat_sys_phone_call_on_hold}"
-            app:rightText='@{"分33为"}'
-            app:rightTextPrefix='@{"ew哦"}'
-            app:rightTextSuffix='@{"俯4"}' />
+        <!--<include-->
+            <!--layout="@layout/lay_multi_text_img"-->
+            <!--app:dividerVisibility="@{false}"-->
+            <!--app:leftImg="@{@android:drawable/stat_sys_phone_call_on_hold}"-->
+            <!--app:leftText='@{"分解22"}'-->
+            <!--app:rightImg="@{@android:drawable/stat_sys_phone_call_on_hold}"-->
+            <!--app:rightText='@{"分33为"}'-->
+            <!--app:rightTextPrefix='@{"ew哦"}'-->
+            <!--app:rightTextSuffix='@{"俯4"}' />-->
 
     </LinearLayout>
 </layout>

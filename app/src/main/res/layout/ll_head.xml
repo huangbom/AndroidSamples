@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    >
+
+    <TextView
+        android:background="?attr/selectableItemBackground"
+        android:id="@+id/tv_product_intro"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:drawableRight="@drawable/selector_arrow_up_down"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/activity_vertical_margin"
+        android:paddingRight="@dimen/activity_vertical_margin"
+        android:text="产品介绍"
+        android:textSize="@dimen/text_size_14" />
+</LinearLayout>

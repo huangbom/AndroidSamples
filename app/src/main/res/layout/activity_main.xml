@@ -9,6 +9,7 @@
         <import type="com.example.wuxie.bieguide.BieGuideActivity" />
         <import type="com.example.wuxie.TextViewActivity" />
         <import type="com.example.wuxie.SampleRecleViewActivity"/>
+        <import type="com.example.wuxie.HeadLinearActivity"/>
 
     </data>
 
@@ -22,43 +23,56 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="onDataBindingClick"
-        android:text="data binding" />
+    <!--<Button-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:onClick="onDataBindingClick"-->
+        <!--android:text="data binding" />-->
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="@{(v) -> MyCartActivity.start(v.getContext())}"
-        android:text="购物车" />
+    <!--<Button-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:onClick="@{(v) -> MyCartActivity.start(v.getContext())}"-->
+        <!--android:text="购物车" />-->
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="@{(v) -> BieGuideActivity.start(v.getContext())}"
-        android:text="bie Guide" />
+    <!--<Button-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:onClick="@{(v) -> BieGuideActivity.start(v.getContext())}"-->
+        <!--android:text="bie Guide" />-->
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="@{(v) -> TextViewActivity.start(v.getContext())}"
-        android:text="textview" />
+    <!--<Button-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:onClick="@{(v) -> TextViewActivity.start(v.getContext())}"-->
+        <!--android:text="textview" />-->
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="retrofit"
-        android:background="@drawable/select_yellow2_0btn"
-        android:text="retrofit sample" />
+    <!--<Button-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:onClick="retrofit"-->
+        <!--android:background="@drawable/select_yellow2_0btn"-->
+        <!--android:text="retrofit sample" />-->
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="@{() -> SampleRecleViewActivity.start(context)}"
-        android:background="@drawable/select_yellow2_0btn"
-        android:text="SampleRecleViewActivity" />
+    <!--<Button-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:onClick="@{() -> SampleRecleViewActivity.start(context)}"-->
+        <!--android:background="@drawable/select_yellow2_0btn"-->
+        <!--android:text="SampleRecleViewActivity" />-->
+
+    <!--<Button-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:onClick="onment"-->
+        <!--android:text="fragment" />-->
+
+    <!--<Button-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="HeadLinearActivity"-->
+        <!--android:onClick="@{() {HeadLinearActivity.start(context)}}"-->
+        <!--/>-->
 
 </LinearLayout>
 </layout>

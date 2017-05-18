@@ -24,4 +24,8 @@ public class MainActivity extends NewBaseActivity {
     public void retrofit(View v){
         RetrofitSampleActivity.start(this);
     }
+
+    public void onment(View vi){
+        FragmentActivity.start(vi.getContext());
+    }
 }

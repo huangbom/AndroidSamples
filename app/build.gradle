@@ -19,9 +19,9 @@ android {
         }
     }
 
-    dataBinding {
-        enabled = true
-    }
+//    dataBinding {
+//        enabled = true
+//    }
 
 
 }
@@ -41,7 +41,10 @@ dependencies {
 
 // for OkHttp3, if you're using an older version,
 // check the stetho website
-    compile 'com.facebook.stetho:stetho-okhttp3:1.4.2'
+//    compile 'com.facebook.stetho:stetho-okhttp3:1.4.2'
+
+    compile 'com.jakewharton:butterknife:8.6.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.6.0'
 
     compile 'com.android.support:appcompat-v7:23.4.0'
     compile 'com.android.support:design:23.4.0'

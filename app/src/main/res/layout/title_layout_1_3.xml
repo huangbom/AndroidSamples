@@ -39,74 +39,74 @@
         android:background="@android:color/white"
         android:gravity="center_vertical">
 
-        <ImageButton
-            style="?attr/toolbarNavigationButtonStyle"
-            android:id="@+id/tb_btn_back"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:onClick="onBackClick"
-            android:src="@drawable/icon_return"
-            android:visibility="@{(canBack ?? true) ? View.VISIBLE : View.GONE}"
-            />
+        <!--<ImageButton-->
+            <!--style="?attr/toolbarNavigationButtonStyle"-->
+            <!--android:id="@+id/tb_btn_back"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:onClick="onBackClick"-->
+            <!--android:src="@drawable/icon_return"-->
+            <!--android:visibility="@{(canBack ?? true) ? View.VISIBLE : View.GONE}"-->
+            <!--/>-->
 
-        <TextView
-            android:id="@+id/tb_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:onClick="onTitleClick"
-            android:text="@{title}"
-            android:textSize="@dimen/text_size_17"
-            tools:text="@string/app_name" />
+        <!--<TextView-->
+            <!--android:id="@+id/tb_title"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_centerInParent="true"-->
+            <!--android:onClick="onTitleClick"-->
+            <!--android:text="@{title}"-->
+            <!--android:textSize="@dimen/text_size_17"-->
+            <!--tools:text="@string/app_name" />-->
 
-        <TextView
-            android:id="@+id/tb_right_tv2"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_alignParentRight="true"
-            android:gravity="center_vertical"
-            android:onClick="onRight2Click"
-            android:textSize="@dimen/text_size_13"
-            android:paddingLeft="@dimen/size_8"
-            android:paddingRight="@dimen/activity_vertical_margin"
-            android:text="@{rightText2 ?? ``}"
-            android:textColor="@{(right_text_color_red ?? false) ? @color/product_item_red_rate : @color/textColorTitle}"
-            android:visibility='@{rightText2 == null ? View.GONE : View.VISIBLE}'
-            tools:text="rightText2" />
+        <!--<TextView-->
+            <!--android:id="@+id/tb_right_tv2"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:onClick="onRight2Click"-->
+            <!--android:textSize="@dimen/text_size_13"-->
+            <!--android:paddingLeft="@dimen/size_8"-->
+            <!--android:paddingRight="@dimen/activity_vertical_margin"-->
+            <!--android:text="@{rightText2 ?? ``}"-->
+            <!--android:textColor="@{(right_text_color_red ?? false) ? @color/product_item_red_rate : @color/textColorTitle}"-->
+            <!--android:visibility='@{rightText2 == null ? View.GONE : View.VISIBLE}'-->
+            <!--tools:text="rightText2" />-->
 
-        <TextView
-            android:id="@+id/tb_right_tv1"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_toLeftOf="@id/tb_right_tv2"
-            android:gravity="center_vertical"
-            android:onClick="onRight1Click"
-            android:minWidth="@dimen/size_40"
-            android:paddingLeft="@dimen/size_8"
-            android:layout_marginRight="-12dp"
-            android:paddingRight="@dimen/size_7"
-            android:text="@{rightText1 ?? ``}"
-            android:textColor="@{(right_text_color_red ?? false) ? @color/product_item_red_rate : @color/textColorTitle}"
-            android:visibility='@{rightText1 == null ? View.GONE : View.VISIBLE}'
-            tools:text="rightText1" />
+        <!--<TextView-->
+            <!--android:id="@+id/tb_right_tv1"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_toLeftOf="@id/tb_right_tv2"-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:onClick="onRight1Click"-->
+            <!--android:minWidth="@dimen/size_40"-->
+            <!--android:paddingLeft="@dimen/size_8"-->
+            <!--android:layout_marginRight="-12dp"-->
+            <!--android:paddingRight="@dimen/size_7"-->
+            <!--android:text="@{rightText1 ?? ``}"-->
+            <!--android:textColor="@{(right_text_color_red ?? false) ? @color/product_item_red_rate : @color/textColorTitle}"-->
+            <!--android:visibility='@{rightText1 == null ? View.GONE : View.VISIBLE}'-->
+            <!--tools:text="rightText1" />-->
 
-        <!--  <ImageView
-              android:id="@+id/tb_image_right"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:layout_alignParentRight="true"
-              android:layout_marginRight="@dimen/size_6"
-              android:layout_marginTop="@dimen/space_14"
-              android:src="@drawable/message_unread_red"
-              android:visibility="gone"
-              tools:visibility="visible" />
-          -->
+        <!--&lt;!&ndash;  <ImageView-->
+              <!--android:id="@+id/tb_image_right"-->
+              <!--android:layout_width="wrap_content"-->
+              <!--android:layout_height="wrap_content"-->
+              <!--android:layout_alignParentRight="true"-->
+              <!--android:layout_marginRight="@dimen/size_6"-->
+              <!--android:layout_marginTop="@dimen/space_14"-->
+              <!--android:src="@drawable/message_unread_red"-->
+              <!--android:visibility="gone"-->
+              <!--tools:visibility="visible" />-->
+          <!--&ndash;&gt;-->
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/divider_view_height"
-            android:layout_alignParentBottom="true"
-            android:background="@color/divider"
-            android:visibility='@{(showDivider ?? true )? View.VISIBLE : View.GONE}' />
+        <!--<View-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="@dimen/divider_view_height"-->
+            <!--android:layout_alignParentBottom="true"-->
+            <!--android:background="@color/divider"-->
+            <!--android:visibility='@{(showDivider ?? true )? View.VISIBLE : View.GONE}' />-->
     </RelativeLayout>
 </layout>
