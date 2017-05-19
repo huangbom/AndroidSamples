@@ -1,78 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<GridView
     xmlns:tools="http://schemas.android.com/tools"
-    >
-
-    <data>
-        <import type="com.example.wuxie.mycart.MyCartActivity" />
-        <import type="com.example.wuxie.bieguide.BieGuideActivity" />
-        <import type="com.example.wuxie.TextViewActivity" />
-        <import type="com.example.wuxie.SampleRecleViewActivity"/>
-        <import type="com.example.wuxie.HeadLinearActivity"/>
-
-    </data>
-
-<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.wuxie.MainActivity">
+    android:id="@+id/gridview"
+    android:verticalSpacing="1dp"
+    android:numColumns="3"
+    android:horizontalSpacing="1dp"
+    android:background="@android:color/white"
+    tools:context="com.example.wuxie.MainActivity"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <requestFocus
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <!--<Button-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:onClick="onDataBindingClick"-->
-        <!--android:text="data binding" />-->
-
-    <!--<Button-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:onClick="@{(v) -> MyCartActivity.start(v.getContext())}"-->
-        <!--android:text="购物车" />-->
-
-    <!--<Button-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:onClick="@{(v) -> BieGuideActivity.start(v.getContext())}"-->
-        <!--android:text="bie Guide" />-->
-
-    <!--<Button-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:onClick="@{(v) -> TextViewActivity.start(v.getContext())}"-->
-        <!--android:text="textview" />-->
-
-    <!--<Button-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:onClick="retrofit"-->
-        <!--android:background="@drawable/select_yellow2_0btn"-->
-        <!--android:text="retrofit sample" />-->
-
-    <!--<Button-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:onClick="@{() -> SampleRecleViewActivity.start(context)}"-->
-        <!--android:background="@drawable/select_yellow2_0btn"-->
-        <!--android:text="SampleRecleViewActivity" />-->
-
-    <!--<Button-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:onClick="onment"-->
-        <!--android:text="fragment" />-->
-
-    <!--<Button-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="HeadLinearActivity"-->
-        <!--android:onClick="@{() {HeadLinearActivity.start(context)}}"-->
-        <!--/>-->
-
-</LinearLayout>
-</layout>
+</GridView>

@@ -1,10 +1,7 @@
 package com.example.wuxie.mycart;
 
 import android.content.Context;
-import android.databinding.DataBindingUtil;
-import android.graphics.Paint;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
@@ -12,7 +9,6 @@ import android.widget.EditText;
 
 import com.example.wuxie.R;
 import com.example.wuxie.base.BaseExpanAdapter;
-import com.example.wuxie.databinding.ItemCartChildrenBinding;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -65,25 +61,25 @@ public class CartAdapter extends BaseExpanAdapter<MyCartActivity.ShopModel,MyCar
 
     @Override
     public View getChildView(final int groupPosition, final int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
-        ItemCartChildrenBinding binding ;
-        if (convertView == null){
-            binding = DataBindingUtil.inflate(LayoutInflater.from(mContext),R.layout.item_cart_children,null,false);
-        }else{
-            binding = DataBindingUtil.getBinding(convertView);
-        }
-        convertView = binding.getRoot();
+//        ItemCartChildrenBinding binding ;
+//        if (convertView == null){
+//            binding = DataBindingUtil.inflate(LayoutInflater.from(mContext),R.layout.item_cart_children,null,false);
+//        }else{
+//            binding = DataBindingUtil.getBinding(convertView);
+//        }
+//        convertView = binding.getRoot();
 
 //        if (convertView == null ){
 //            convertView = View.inflate(mContext,R.layout.item_cart_children,null);
 //        }
-
-        binding.eAet.setVisibility(mIsEdit ?  View.VISIBLE : View.GONE);
-        binding.eBtnInvalid.setVisibility(mIsEdit ?  View.VISIBLE : View.GONE);
-        binding.eIvArrow.setVisibility(mIsEdit ?  View.VISIBLE : View.GONE);
-
-        binding.sTvNumber.setVisibility(mIsEdit ?  View.GONE : View.VISIBLE);
-
-        binding.textView2.setPaintFlags(Paint.STRIKE_THRU_TEXT_FLAG);
+//
+//        binding.eAet.setVisibility(mIsEdit ?  View.VISIBLE : View.GONE);
+//        binding.eBtnInvalid.setVisibility(mIsEdit ?  View.VISIBLE : View.GONE);
+//        binding.eIvArrow.setVisibility(mIsEdit ?  View.VISIBLE : View.GONE);
+//
+//        binding.sTvNumber.setVisibility(mIsEdit ?  View.GONE : View.VISIBLE);
+//
+//        binding.textView2.setPaintFlags(Paint.STRIKE_THRU_TEXT_FLAG);
 
 
         List<MyCartActivity.ShopModel.ProduModel> list = mIsEdit ? mEditGoods : mSelectGoods;
@@ -91,8 +87,8 @@ public class CartAdapter extends BaseExpanAdapter<MyCartActivity.ShopModel,MyCar
 
         MyCartActivity.ShopModel.ProduModel child = getChild(groupPosition, childPosition);
         child.setCheck(list.contains(child));
-        binding.setPresenter(new Persenter());
-        binding.setGoods(child);
+//        binding.setPresenter(new Persenter());
+//        binding.setGoods(child);
 
         return convertView;
     }

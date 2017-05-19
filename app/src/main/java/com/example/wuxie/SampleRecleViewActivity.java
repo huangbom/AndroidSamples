@@ -61,11 +61,11 @@ public class SampleRecleViewActivity extends NewBaseActivity {
 //        ((CollapsingToolbarLayout) root.findViewById(R.id.collapsing_toolbar_layout)).setTitle("Screen Title");
         rv = viewById.getRefreshableView();
 //        rv.addItemDecoration();
-        rv.setLayoutManager(new LinearLayoutManager(mContext));
+        rv.setLayoutManager(new LinearLayoutManager(mActivity));
         adapter = new  RecyclerView.Adapter<ViewHolder>() {
             @Override
             public ViewHolder onCreateViewHolder(ViewGroup parent, int position) {
-                return new ViewHolder(View.inflate(mContext,R.layout.sample_recleview_list_item, null));
+                return new ViewHolder(View.inflate(mActivity,R.layout.sample_recleview_list_item, null));
             }
 
             @Override
@@ -140,12 +140,12 @@ public class SampleRecleViewActivity extends NewBaseActivity {
     }
 
     public void grid(View view){
-        rv.setLayoutManager(new GridLayoutManager(mContext,3));
+        rv.setLayoutManager(new GridLayoutManager(mActivity,3));
 
     }
 
     public void linear(View view){
-        rv.setLayoutManager(new LinearLayoutManager(mContext));
+        rv.setLayoutManager(new LinearLayoutManager(mActivity));
     }
 
     private static class ViewHolder extends RecyclerView.ViewHolder {

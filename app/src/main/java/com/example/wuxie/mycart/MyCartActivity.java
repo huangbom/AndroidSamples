@@ -44,8 +44,6 @@ public class MyCartActivity extends NewBaseActivity {
         setContentView(R.layout.activity_my_cart);
 //        expandableListView
 
-        setTitle("购物车");
-        setMenuTitle(null,"编辑");
 
         s_tv_haixuzhifu = $(R.id.s_tv_haixuzhifu);
         mNowBuy = $(R.id.btn_now_buy);
@@ -126,10 +124,8 @@ public class MyCartActivity extends NewBaseActivity {
         Log.d(TAG, "nowBuy: "+ mCartAdapter.getGoods());
     }
 
-    @Override
     public void onRight2Click(View view) {
         _isEdit = !_isEdit ;
-        setMenuTitle(null,_isEdit ? "完成" : "编辑");
         mNowBuy.setText(_isEdit ? "删除选择" : "提交订单");
 
         s_tv_haixuzhifu.setVisibility(_isEdit ? View.GONE : View.VISIBLE);
