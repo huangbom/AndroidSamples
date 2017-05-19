@@ -1,4 +1,5 @@
 <resources>
+    <string name="digits_deal_pwd">0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</string>
     <string name="app_name">AndroidSample</string>
     <string name="del_text"><i>999</i></string>
     <string name="title_activity_main3">Main3Activity</string>

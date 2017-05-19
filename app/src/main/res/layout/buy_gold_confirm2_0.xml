@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/order_time_tv"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_34"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/size_8"
+                android:textSize="@dimen/text_size_14"
+                tools:text="5 : 00 分后预买订单失效，请及时支付！" />
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:background="@android:color/white"
+            android:orientation="vertical">
+            <!--<include-->
+                <!--layout="@layout/title_layout_1_3"-->
+                <!--app:backImg='@{@drawable/produce_buy_popup_btn_close_2_0}'-->
+                <!--app:title="@{@string/confirm_pay}" />-->
+
+            <!--<include-->
+                <!--layout="@layout/lay_lrtv_iv"-->
+                <!--app:text='@{"支付金额"}'-->
+                <!--app:text2='@{bean.getAmount()}'-->
+                <!--app:text3='@{@string/unit_yuan}' />-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/size_4"
+                android:paddingLeft="@dimen/activity_vertical_margin"
+                android:paddingRight="@dimen/activity_vertical_margin"
+                android:paddingTop="@dimen/size_4">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="账户可用余额"
+                    android:textColor="@color/textColorNormal" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/tv_right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text='bean.getAvailableAmount() '
+                    tools:text="rightText  " />
+
+                <CheckBox
+                    android:id="@+id/checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:background="@android:color/transparent"
+                    android:checked="true" />
+            </LinearLayout>
+
+            <!--<include layout="@layout/divider_layout_lm" />-->
+
+            <!--<include-->
+                <!--android:id="@+id/inc_coupons"-->
+                <!--layout="@layout/lay_lrtv_iv"-->
+                <!--app:text='@{"优惠券抵扣"}' />-->
+
+            <LinearLayout
+                android:id="@+id/ll_payment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:gravity="right"
+                android:orientation="horizontal"
+                android:padding="@dimen/activity_vertical_margin">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="还需付 "
+                    android:textSize="@dimen/text_size_20" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="¥"
+                    android:textSize="@dimen/size_17" />
+
+                <TextView
+                    android:id="@+id/tv_payment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/size_17"
+                    tools:text="235.65 " />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                />
+
+            <Button
+                android:id="@+id/btn_confirm_pay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="确认付款" />
+        </LinearLayout>
+
+
+
+    </LinearLayout>

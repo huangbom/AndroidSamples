@@ -82,6 +82,9 @@ public class MainActivity extends NewBaseActivity implements AdapterView.OnItemC
             if (convertView == null){
                 tv = new TextView(mActivity);
                 tv.setGravity(Gravity.CENTER);
+                int i = ScreenUtils.dp2Px(mActivity, 10);
+                tv.setPadding(i,i,i,i);
+//                tv.setBackgroundResource(R.drawable.shape_oval_black);
                 tv.setLayoutParams(new AbsListView.LayoutParams(-2, ScreenUtils.dp2Px(mActivity,40)));
             }
 

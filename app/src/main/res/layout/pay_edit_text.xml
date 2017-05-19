@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
+
+    <EditText
+        android:digits="@string/digits_deal_pwd"
+        android:id="@+id/pay_et"
+        android:maxLength="6"
+        android:inputType="textPassword"
+        android:background="@null"
+        android:cursorVisible="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <GridView
+        android:id="@+id/pay_grid"
+        android:numColumns="6"
+        android:background="@android:color/white"
+        android:listSelector="@android:color/transparent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/pay_et_item"
+        android:layout_width="match_parent">
+
+    </GridView>
+
+
+</merge>
