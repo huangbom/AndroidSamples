@@ -51,6 +51,7 @@ public class MainActivity extends NewBaseActivity implements AdapterView.OnItemC
         mList.add(new Bean("SampleRecleView", SampleRecleViewActivity.class));
         mList.add(new Bean("HeadLinearActivity", HeadLinearActivity.class));
         mList.add(new Bean("仿微信支付框", PayPasswordEditActivity.class));
+        mList.add(new Bean("bind service", BindServiceActivity.class));
     }
 
     @Override

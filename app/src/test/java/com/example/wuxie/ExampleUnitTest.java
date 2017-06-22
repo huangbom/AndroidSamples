@@ -17,6 +17,13 @@ public class ExampleUnitTest {
     List<Integer> list2 = new ArrayList<>();
 
     @Test
+    public void test(){
+        String fe = "2ew";
+
+        System.out.println(fe instanceof CharSequence);
+    }
+
+    @Test
     public void addition_isCorrect() throws Exception {
         assertEquals(4, 2 + 2);
 

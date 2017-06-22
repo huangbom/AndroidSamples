@@ -26,8 +26,13 @@
         <activity android:name=".TextViewActivity" />
         <activity android:name=".SampleRecleViewActivity" />
         <activity android:name=".HeadLinearActivity" />
-        <activity android:name=".PayPasswordEditActivity"
-            />
+        <activity android:name=".PayPasswordEditActivity" />
+        <activity android:name=".BindServiceActivity" />
+
+        <service
+            android:name=".service.SampleService"
+            android:enabled="true"
+            android:exported="true"></service>
     </application>
 
 </manifest>

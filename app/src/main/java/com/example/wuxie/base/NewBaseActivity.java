@@ -17,6 +17,7 @@ import com.example.wuxie.goldapi.GoldClient;
 public abstract class NewBaseActivity extends AppCompatActivity {
 
     public static final String TAG = NewBaseActivity.class.getSimpleName();
+    static final int PERMISSIONS_REQUEST_READ_CONTACTS = 0x100;
 
 
     protected NewBaseActivity mActivity;
@@ -45,7 +46,6 @@ public abstract class NewBaseActivity extends AppCompatActivity {
         return GoldApiUtils.getGoldClient();
     }
 
-    static final int PERMISSIONS_REQUEST_READ_CONTACTS = 0x100;
 
     protected void startAppSetting() {
         Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
