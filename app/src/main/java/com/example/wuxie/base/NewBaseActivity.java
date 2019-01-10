@@ -1,5 +1,6 @@
 package com.example.wuxie.base;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.net.Uri;
@@ -10,9 +11,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
-
-import com.example.wuxie.goldapi.GoldApiUtils;
-import com.example.wuxie.goldapi.GoldClient;
 
 public abstract class NewBaseActivity extends AppCompatActivity {
 
@@ -40,10 +38,6 @@ public abstract class NewBaseActivity extends AppCompatActivity {
 
         Log.w("NewBaseActivity", getClass().getName());
 
-    }
-
-    protected GoldClient getGoldClient(){
-        return GoldApiUtils.getGoldClient();
     }
 
 

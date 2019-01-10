@@ -8,13 +8,13 @@ import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.TextView;
 
 import com.example.wuxie.base.NewBaseActivity;
 import com.example.wuxie.bieguide.BieGuideActivity;
 import com.example.wuxie.common.utils.ScreenUtils;
-import com.example.wuxie.goldapi.RetrofitSampleActivity;
 import com.example.wuxie.mycart.MyCartActivity;
 
 import java.util.ArrayList;
@@ -47,7 +47,6 @@ public class MainActivity extends NewBaseActivity implements AdapterView.OnItemC
         mList.add(new Bean("购物车", MyCartActivity.class));
         mList.add(new Bean("bie Guide", BieGuideActivity.class));
         mList.add(new Bean("textview", TextViewActivity.class));
-        mList.add(new Bean("retrofit sample", RetrofitSampleActivity.class));
         mList.add(new Bean("SampleRecleView", SampleRecleViewActivity.class));
         mList.add(new Bean("HeadLinearActivity", HeadLinearActivity.class));
         mList.add(new Bean("仿微信支付框", PayPasswordEditActivity.class));
@@ -79,9 +78,9 @@ public class MainActivity extends NewBaseActivity implements AdapterView.OnItemC
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            TextView tv = (TextView)convertView;
+            Button tv = (Button)convertView;
             if (convertView == null){
-                tv = new TextView(mActivity);
+                tv = new Button(mActivity);
                 tv.setGravity(Gravity.CENTER);
                 int i = ScreenUtils.dp2Px(mActivity, 10);
                 tv.setPadding(i,i,i,i);
