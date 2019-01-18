@@ -21,7 +21,6 @@
         <activity android:name=".mycart.MyCartActivity" />
         <activity android:name=".bieguide.BieGuideActivity" />
         <activity android:name=".bieguide.BieGuide2Activity" />
-        <activity android:name=".goldapi.RetrofitSampleActivity" />
         <activity android:name=".BaoBenProductDetailActivity" />
         <activity android:name=".TextViewActivity" />
         <activity android:name=".SampleRecleViewActivity" />
@@ -34,7 +33,7 @@
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".AnkoActivity"></activity>
+        <activity android:name=".AnkoActivity"/>
     </application>
 
 </manifest>

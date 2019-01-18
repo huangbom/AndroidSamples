@@ -1,5 +1,6 @@
 package com.example.wuxie;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -29,8 +30,7 @@ public class MainActivity extends NewBaseActivity implements AdapterView.OnItemC
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
+//        gridview
         initList();
 
         GridView recyclerView = $(R.id.gridview);
@@ -39,7 +39,7 @@ public class MainActivity extends NewBaseActivity implements AdapterView.OnItemC
         recyclerView.setAdapter(mAdapter);
 
         recyclerView.setOnItemClickListener(this);
-
+startActivity(new Intent(this,AnkoActivity.class));
     }
 
     void initList(){
@@ -51,6 +51,7 @@ public class MainActivity extends NewBaseActivity implements AdapterView.OnItemC
         mList.add(new Bean("HeadLinearActivity", HeadLinearActivity.class));
         mList.add(new Bean("仿微信支付框", PayPasswordEditActivity.class));
         mList.add(new Bean("bind service", BindServiceActivity.class));
+//        mList.add(new Bean("anko", AnkoActivity.class));
     }
 
     @Override
@@ -100,7 +101,7 @@ public class MainActivity extends NewBaseActivity implements AdapterView.OnItemC
 
     private static class Bean{
         public String name;
-        public Class clz;
+        public Class<Activity> clz;
 
         public Bean(String name, Class clz) {
             this.name = name;
