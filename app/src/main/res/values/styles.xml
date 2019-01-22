@@ -1,9 +1,9 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
         <!-- Customize your theme here. -->
-        <item name="android:windowBackground">@android:color/darker_gray</item>
+        <!--<item name="android:windowBackground">@android:color/darker_gray</item>-->
     </style>
 
     <style name="AppTheme.Translucent">
@@ -25,5 +25,12 @@
     <style name="SlideBottom" >
         <item name="android:activityOpenEnterAnimation">@anim/slide_bottom_in</item>
     </style>
+
+    <style name="Base.Widget.Design.TabLayout" parent="android:Widget">
+        <item name="tabBackground">@drawable/tab_background</item>
+        <item name="tabIndicatorColor">#ff00ff</item>
+        <item name="tabIndicatorHeight">2dp</item>
+    </style>
+
 
 </resources>

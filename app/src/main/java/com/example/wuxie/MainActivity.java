@@ -38,8 +38,7 @@ public class MainActivity extends NewBaseActivity implements AdapterView.OnItemC
         mAdapter = new MainAdapter();
         recyclerView.setAdapter(mAdapter);
 
-        recyclerView.setOnItemClickListener(this);
-startActivity(new Intent(this,AnkoActivity.class));
+        AnkoActivity.Companion.start(this);
     }
 
     void initList(){
@@ -51,16 +50,15 @@ startActivity(new Intent(this,AnkoActivity.class));
         mList.add(new Bean("HeadLinearActivity", HeadLinearActivity.class));
         mList.add(new Bean("仿微信支付框", PayPasswordEditActivity.class));
         mList.add(new Bean("bind service", BindServiceActivity.class));
-//        mList.add(new Bean("anko", AnkoActivity.class));
+        mList.add(new Bean("anko", AnkoActivity.class));
     }
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Intent intent = new Intent(mActivity, mAdapter.getItem(position).clz);
-        mActivity.startActivity(intent);
+
     }
 
-    private class MainAdapter extends BaseAdapter {
+    private class MainAdapter extends BaseAdapter{
 
         @Override
         public int getCount() {
@@ -78,7 +76,7 @@ startActivity(new Intent(this,AnkoActivity.class));
         }
 
         @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
+        public View getView(final int position, View convertView, ViewGroup parent) {
             Button tv = (Button)convertView;
             if (convertView == null){
                 tv = new Button(mActivity);
@@ -86,13 +84,24 @@ startActivity(new Intent(this,AnkoActivity.class));
                 int i = ScreenUtils.dp2Px(mActivity, 10);
                 tv.setPadding(i,i,i,i);
 //                tv.setBackgroundResource(R.drawable.shape_oval_black);
-                tv.setLayoutParams(new AbsListView.LayoutParams(-2, ScreenUtils.dp2Px(mActivity,40)));
+                tv.setLayoutParams(new AbsListView.LayoutParams(-1, -1));
             }
 
             tv.setText(getItem(position).name);
-
+            tv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    buttonClick(view,position);
+                }
+            });
             return tv;
         }
+
+        public void buttonClick(View view,int position){
+            Intent intent = new Intent(mActivity, mAdapter.getItem(position).clz);
+            mActivity.startActivity(intent);
+        }
+
     };
 
 
