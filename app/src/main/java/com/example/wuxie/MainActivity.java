@@ -30,7 +30,6 @@ public class MainActivity extends NewBaseActivity implements AdapterView.OnItemC
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        gridview
         initList();
 
         GridView recyclerView = $(R.id.gridview);
@@ -38,7 +37,7 @@ public class MainActivity extends NewBaseActivity implements AdapterView.OnItemC
         mAdapter = new MainAdapter();
         recyclerView.setAdapter(mAdapter);
 
-        AnkoActivity.Companion.start(this);
+//        AnkoActivity.Companion.start(this);
     }
 
     void initList(){
@@ -51,6 +50,7 @@ public class MainActivity extends NewBaseActivity implements AdapterView.OnItemC
         mList.add(new Bean("仿微信支付框", PayPasswordEditActivity.class));
         mList.add(new Bean("bind service", BindServiceActivity.class));
         mList.add(new Bean("anko", AnkoActivity.class));
+        mList.add(new Bean("image", ImageActivity.class));
     }
 
     @Override

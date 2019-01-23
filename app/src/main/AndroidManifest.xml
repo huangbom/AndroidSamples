@@ -33,7 +33,8 @@
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".AnkoActivity"/>
+        <activity android:name=".AnkoActivity" />
+        <activity android:name=".ImageActivity"></activity>
     </application>
 
 </manifest>

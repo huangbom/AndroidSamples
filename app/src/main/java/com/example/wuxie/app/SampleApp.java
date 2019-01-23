@@ -9,7 +9,6 @@ import com.facebook.stetho.Stetho;
 /**
  * Created by huangyaoshi on 2017/4/17.
  */
-
 public class SampleApp extends MultiDexApplication {
 
     static SampleApp instance;

@@ -3,12 +3,11 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 27
-    buildToolsVersion "27.0.3"
+    compileSdkVersion 28
     defaultConfig {
         applicationId "com.example.wuxie"
         minSdkVersion 21
-        targetSdkVersion 27
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
         vectorDrawables.useSupportLibrary = true
@@ -21,35 +20,40 @@ android {
         }
     }
 
-}
+    dependencies {
+        implementation fileTree(include: ['*.jar'], dir: 'libs')
+        ext.anko_version = '0.10.8'
+        implementation "org.jetbrains.anko:anko-commons:$anko_version"
+        implementation "org.jetbrains.anko:anko-sdk21:$anko_version"
+        implementation "org.jetbrains.anko:anko-appcompat-v7:$anko_version"
+        implementation "org.jetbrains.anko:anko-design:$anko_version"
+        implementation "org.jetbrains.anko:anko-recyclerview-v7:$anko_version"
+        implementation "org.jetbrains.anko:anko-sqlite:$anko_version"
 
-dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
-    ext.anko_version='0.10.8'
-    implementation "org.jetbrains.anko:anko-commons:$anko_version"
-    implementation "org.jetbrains.anko:anko-sdk21:$anko_version"
-    implementation "org.jetbrains.anko:anko-appcompat-v7:$anko_version"
-    implementation "org.jetbrains.anko:anko-design:$anko_version"
-    implementation "org.jetbrains.anko:anko-recyclerview-v7:$anko_version"
-    implementation "org.jetbrains.anko:anko-sqlite:$anko_version"
-
-    // Retrofit & OkHttp
-    implementation 'com.squareup.retrofit2:retrofit:2.2.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.2.0'
-    implementation 'com.squareup.okhttp3:logging-interceptor:3.6.0'
-    // for OkHttp3, if you're using an older version,
-    // check the stetho website
-    implementation 'com.facebook.stetho:stetho:1.4.2'
-    implementation 'com.facebook.stetho:stetho-okhttp3:1.4.2'
+        // Retrofit & OkHttp
+        implementation 'com.squareup.retrofit2:retrofit:2.2.0'
+        implementation 'com.squareup.retrofit2:converter-gson:2.2.0'
+        implementation 'com.squareup.okhttp3:logging-interceptor:3.6.0'
+        // for OkHttp3, if you're using an older version,
+        // check the stetho website
+        implementation 'com.facebook.stetho:stetho:1.4.2'
+        implementation 'com.facebook.stetho:stetho-okhttp3:1.4.2'
 
 
-    final support_version = "27.1.1"
-    implementation "com.android.support:appcompat-v7:$support_version"
-    implementation "com.android.support:design:$support_version"
-    implementation 'com.android.support:multidex:1.0.0'
+        final support_version = "28.0.0"
+        implementation "com.android.support:appcompat-v7:$support_version"
+        implementation "com.android.support:design:$support_version"
+        implementation 'com.android.support:multidex:1.0.0'
 
+        implementation 'com.squareup.picasso:picasso:2.71828'
+        implementation 'com.github.bumptech.glide:glide:3.7.0'
+//        annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+
+//    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
 //    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
-    implementation 'com.orhanobut:logger:1.15'
-    testImplementation 'junit:junit:4.12'
+        implementation 'com.orhanobut:logger:1.15'
+        testImplementation 'junit:junit:4.12'
+    }
 }
+
