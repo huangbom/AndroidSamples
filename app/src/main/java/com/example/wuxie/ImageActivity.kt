@@ -4,7 +4,6 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import com.bumptech.glide.Glide
-import com.squareup.picasso.Picasso
 
 class ImageActivity : AppCompatActivity() {
 
@@ -14,9 +13,7 @@ class ImageActivity : AppCompatActivity() {
 
         val image =  findViewById<ImageView>(R.id.ic_image)
 
-        Picasso.get().load(
-                "https://slack-files.com/T0BLTQC84-FFLCQMX6X-9ec3e12be7").into(image)
-//        Glide.with(this).load(
-//                "https://slack-files.com/T0BLTQC84-FFLCQMX6X-9ec3e12be7").into(image)
+        Glide.with(this).load(
+                "https://raw.githubusercontent.com/huangbom/AndroidSamples/master/app/src/main/res/drawable/displayad_banner.png").into(image)
     }
 }
